@@ -33,13 +33,20 @@
       <br>
       <input type="text" id="inputHomePhone" class="form-control" placeholder="Telefone">
       <br>      
-      <input type="text" id="inputState" class="form-control" placeholder="Estado" required>
+      <select class="custom-select d-block w-100" id="state" required>
+        <option value="">Estado</option>
+        <option>SP</option>
+      </select>
+      <!-- <input type="text" id="inputState" class="form-control" placeholder="Estado" required> -->
       <br>
-      <input type="text" id="inputCity" class="form-control" placeholder="Cidade" required>
+      <select id="city" class="custom-select d-block w-100" id="city" required>
+        <option value="">Cidade</option>
+        <option>Matão</option>
+      </select>      
       <br>      
       <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar-se</button>
       <p>Já possui uma conta? <a href="#">Entre</a> agora mesmo!</p>
-      <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
+      <p class="mt-5 mb-3 text-muted">&copy; 2019 KMS Team</p>
     </form>
   </body>
 </html>
