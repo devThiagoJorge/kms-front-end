@@ -15,15 +15,14 @@
 }
 
 #cancel, #save{
-  width: 25%;
-  align-items: center;
+  width: 25%;  
 }
 
-#foto{
+#user{
+  width: 100%;
+  cursor: pointer;
+}
+
+/* #picture{
   background-color: red;
-}
-
-img{
-  height: 72px;
-  width: 72px;
-}
+} */
