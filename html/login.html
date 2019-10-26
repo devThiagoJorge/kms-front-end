@@ -7,32 +7,36 @@
     <meta name="author" content="">
     <link rel="icon" href="../images/icon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <title>KMS - Entrar</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../css/login.css" rel="stylesheet">
-    
     <!-- Custom styles for this template -->
     <link href="" rel="stylesheet">
   </head>
 
   <body class="text-center">
-    <form class="form-signin">
+   
+    <article class="form-signin">
       <img class="mb-4" src="../images/icon.png" alt="kms-icon" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-bold">Kennel Manager System</h1>    
       <br>  
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>  
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email"  required autofocus>  
       <br>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+      <input type="password" id="inputPassword" class="form-control" required placeholder="Senha" >
       <br>  
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Continuar conectado
         </label>
       </div>
-      <button class="btn btn-lg btn-success btn-block" type="submit">Entrar</button>
-      <p>Ainda não possui uma conta? <a href="#">Cadastre-se</a> agora mesmo!</p>      
+      <button class="btn btn-lg btn-success btn-block" id="btnRequest">Entrar</button>
+      <p>Ainda não possui uma conta? <a href="cadastro.html">Cadastre-se</a> agora mesmo!</p>      
       <p class="mt-5 mb-3 text-muted">&copy; 2019 KMS Team</p>
-    </form>
+    </article>
   </body>
+  <script  src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script  src="../js//login.js"></script>
 </html>
