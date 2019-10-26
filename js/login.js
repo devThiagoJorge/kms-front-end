@@ -2,7 +2,6 @@ $('#btnRequest').click(function(){
     var inputEmail = $('#inputEmail').val();
     var inputPassword = $('#inputPassword').val(); 
 
-    console.log(inputEmail, inputPassword);
     axios.post('http://localhost:3001/login/', {email: inputEmail , password: inputPassword})
     .then(function(response){            
             if (response.data.error != undefined) {
@@ -15,11 +14,11 @@ $('#btnRequest').click(function(){
                     alert('Senha inválida.');
                 }
             }else{
-                console.log(response.data);
+               
                 alert('Bien viendo!');        
             }      
         })
         .catch(function(error){
-            console.log(error);        
+            alert(error);        
         }); 
 });
