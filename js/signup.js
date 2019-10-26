@@ -1,11 +1,7 @@
-$(document).ready(function() {
-  $(" #inputCellphone").mask("(00) 0000-00000");
-});
-$(document).ready(function() {
-  $("#inputHomePhone").mask("(00) 0000-0000");
-});
-$(document).ready(function() {
-  $("#inputCep").mask("00000-000");
+$(document).ready(function () {
+    $("#inputCellphone").mask("(00)00000-0000");
+    $("#inputHomePhone").mask("(00)0000-0000");
+    $("#inputCep").mask("00000-000");
 });
 
 $("#inputCep").keyup(function() {

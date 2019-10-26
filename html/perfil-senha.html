@@ -29,74 +29,42 @@
     <div class="row" class="col-md-2 mb-4">
 
       <div id="buttons" class="col-md-2 order-md-1 mb-4">
-        <a href="perfil.html" class="btn btn-dark" style="width: 100%;">Geral</a>
-        <a href="perfil-senha.html" class="btn mt-1" style="width: 100%; background-color: #DCDCDC;">Segurança</a>
+        <a href="perfil.html" class="btn" style="width: 100%; background-color: #DCDCDC">Geral</a>
+        <a href="perfil-senha.html" class="btn btn-dark mt-1" style="width: 100%;">Segurança</a>
       </div>
 
-      <div id="picture" class="col-md-2 order-md-2 mb-4">
+      <!-- <div id="picture" class="col-md-2 order-md-2 mb-4">
         <img id="user" src="../images/user.jpg" alt="user-picture">
         <button style="width: 100%;" class="btn btn-dark mt-2">Alterar</button>
-      </div>
+      </div> -->
 
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">Editar perfil</h4>
-
-        <article id="form">
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="firstName">Primeiro nome</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>             
-            </div>
-
-            <div class="col-md-6 mb-3">
-              <label for="lastName">Sobrenome</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>          
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12 mb-3">
-              <label for="email">E-mail</label>
-              <input type="email" class="form-control" id="email">             
-            </div>        
-          </div>
-
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="cellPhone">Celular</label>
-              <input id="cellPhone" type="text" class="form-control">
-            </div>
-
-            <div class="col-md-6 mb-3">
-              <label for="homePhone">Telefone</label>
-              <input id="homePhone" type="text" class="form-control">
-            </div>
-          </div>
+        <article>
 
           <div class="row">
             <div class="col-md-4 mb-3">
-              <label for="cep">CEP</label>
-              <input id="cep" type="text" class="form-control">
+              <label for="senhaAtual">Senha atual</label>
+              <input type="password" class="form-control" id="senhaAtual" placeholder="" value="" required>
             </div>
 
             <div class="col-md-4 mb-3">
-              <label for="state">Estado</label>
-              <input id="state" type="text" class="form-control" readonly>
+              <label for="novaSenha">Nova senha</label>
+              <input type="password" class="form-control" id="novaSenha" placeholder="" value="" required>
             </div>
 
             <div class="col-md-4 mb-3">
-              <label for="city">Cidade</label>
-              <input id="city" type="text" class="form-control" readonly>
+              <label for="novaSenha2">Confirme a nova senha</label>
+              <input type="password" class="form-control" id="novaSenha2" placeholder="" value="" required>
             </div>
           </div>
 
           <hr class="mb-4">
           <div id="buttons">
-            <button class="btn btn-danger" id="btnCancel">Cancelar</button>
-            <button class="btn btn-success" id="btnSave" type="submit">Salvar</button>
+            <button class="btn btn-danger" id="cancel">Cancelar</button>
+            <button class="btn btn-success" id="save" type="submit">Salvar</button>
           </div>
         </article>
-
       </div>
     </div>
 
@@ -145,7 +113,7 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-<script  src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="../js/perfil.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../js/perfil-senha.js"></script>
 
 </html>
