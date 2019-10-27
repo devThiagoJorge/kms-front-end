@@ -27,23 +27,29 @@ $('#cep').keyup(function () {
 });
 
 $(document).ready(function () {
-
   $('#form input').each(function () {
     $(this).val(localStorage.getItem($(this).attr('id')));
   });
-
-
-  // $('#firstName').val(localStorage.getItem('firstName'));
-  // $('#lastName').val(localStorage.getItem('lastName'));
-  // $('#email').val(localStorage.getItem('email'));
-  // $('#cellPhone').val(localStorage.getItem('cellPhone'));
-  // $('#homePhone').val(localStorage.getItem('homePhone'));
-  // $('#cep').val(localStorage.getItem('cep'));
-  // $('#state').val(localStorage.getItem('state'));
-  // $('#city').val(localStorage.getItem('city'));
 });
 
 $('#btnSave').click(function () {
+  if (validaCampos()) {  
+    atualizaUser();
+  }
+});
+
+function validaCampos() {
+  let continua = true;
+  $('#form input').each(function () {
+    if ($(this).val() == '' && ( $(this).attr('id') != 'cellPhone' && $(this).attr('id') != 'homePhone') ){
+      $(this).css('border-color', 'red');
+      continua = false;
+    }
+  });
+  return continua;
+}
+
+function atualizaUser() {
   let alteracao = false;
   $('#form input').each(function () {
     if ($(this).val() != localStorage.getItem($(this).attr("id"))) {
@@ -66,27 +72,32 @@ $('#btnSave').click(function () {
       city: $('#city').val()
     }
 
-    axios.put('http://localhost:3001/user/' + user.email, user)
+    const config = {
+      headers: { 'Authorization': "bearer " + localStorage.getItem('token') }
+    };
+
+    axios.put('http://localhost:3001/user/' + localStorage.getItem('email'), user, config)
       .then(function (response) {
         if (response.data.error != undefined) {
           console.log(response.data.error);
-        }else{
+        } else {
+          Object.keys(user).forEach(function (property) {
+            localStorage.setItem(property, user[property]);
+          });
+
           alert('Dados salvos com sucesso!');
         }
       })
-      .catch(function(error){
+      .catch(function (error) {
         console.log(error);
       });
-
   } else {
     location.reload();
   }
-});
+}
 
-/*
-  1) Para cada input, comparar com sua respectiva key no local storage
-  2) Se ao menos 1 input estiver diferente de sua respectiva key:
-    3) Pegar todas as informações dos inputs, cria um objetivo e faz a requsição put no servidor para atualizar
-  4)Se não:
-    5)Refresh na tela
-*/
+$('#form input').each(function () {
+  $(this).click(function(){
+    $(this).css('border-color', '#ced4da');
+  });
+});

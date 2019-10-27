@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8">
@@ -7,13 +7,10 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <!-- <link rel="icon" href="../../../../favicon.ico"> -->
-
   <title>KMS - Perfil</title>
-
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
   <!-- Custom styles for this template -->
   <link href="../css/perfil.css" rel="stylesheet">
 </head>
@@ -33,11 +30,6 @@
         <a href="perfil-senha.html" class="btn mt-1" style="width: 100%; background-color: #DCDCDC;">Segurança</a>
       </div>
 
-      <div id="picture" class="col-md-2 order-md-2 mb-4">
-        <img id="user" src="../images/user.jpg" alt="user-picture">
-        <button style="width: 100%;" class="btn btn-dark mt-2">Alterar</button>
-      </div>
-
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">Editar perfil</h4>
 
@@ -45,20 +37,20 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">Primeiro nome</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>             
+              <input type="text" class="form-control" id="firstName">
             </div>
 
             <div class="col-md-6 mb-3">
               <label for="lastName">Sobrenome</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>          
+              <input type="text" class="form-control" id="lastName">
             </div>
           </div>
 
           <div class="row">
             <div class="col-md-12 mb-3">
               <label for="email">E-mail</label>
-              <input type="email" class="form-control" id="email">             
-            </div>        
+              <input type="email" class="form-control" id="email" readonly>
+            </div>
           </div>
 
           <div class="row">
@@ -69,7 +61,7 @@
 
             <div class="col-md-6 mb-3">
               <label for="homePhone">Telefone</label>
-              <input id="homePhone" type="text" class="form-control">
+              <input id="homePhone" type="text" class="form-control">      
             </div>
           </div>
 
@@ -98,6 +90,12 @@
         </article>
 
       </div>
+
+      <div id="picture" class="col-md-2 order-md-2 mb-4">
+        <img id="user" src="../images/user.jpg" alt="user-picture">
+        <button style="width: 100%;" class="btn btn-dark mt-1">Alterar</button>
+      </div>
+
     </div>
 
     <footer class="my-5 pt-5 text-muted text-center text-small">
@@ -110,42 +108,10 @@
     </footer>
   </div>
 
-  <!-- scripts do template:
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-  <script src="../../../../assets/js/vendor/popper.min.js"></script>
-  <script src="../../../../dist/js/bootstrap.min.js"></script>
-  <script src="../../../../assets/js/vendor/holder.min.js"></script>
-  <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function () {
-      'use strict';
-
-      window.addEventListener('load', function () {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function (form) {
-          form.addEventListener('submit', function (event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-          }, false);
-        });
-      }, false);
-    })();  
-    
-    </script> -->
-
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-<script  src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="../js/perfil.js"></script>
 
 </html>
