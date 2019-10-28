@@ -92,7 +92,7 @@ function atualizaUser() {
         console.log(error);
       });
   } else {
-    location.reload();
+    alert('Dados salvos com sucesso!');
   }
 }
 

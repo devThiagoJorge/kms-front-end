@@ -58,7 +58,7 @@ $("#btnRegister").click(function() {
           alert("Usuário já cadastrado");
         } else {
           //Troca cor do campo senha para vermelho
-          alert("Erro ao cadastra usuario.");
+          alert("Erro ao cadastrar usuario.");
         }
       } else {
         console.log(response.data);
