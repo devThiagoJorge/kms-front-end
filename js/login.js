@@ -17,7 +17,7 @@ $("#btnRequest").click(function() {
           alert("Senha inválida.");
         }
       } else {
-        window.location.href = "perfil.html";
+        window.location.href = "index.html";
 
      
         var obj = response.data.user;
@@ -31,4 +31,8 @@ $("#btnRequest").click(function() {
     .catch(function(error) {
       alert(error);
     });
+});
+
+$(document).ready(function () {
+  localStorage.clear();
 });

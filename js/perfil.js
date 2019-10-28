@@ -83,6 +83,10 @@ $('#btnSave').click(function () {
   }
 });
 
+$('#btnCancel').click(function(){
+  window.location.href = "index.html";
+});
+
 /*
   1) Para cada input, comparar com sua respectiva key no local storage
   2) Se ao menos 1 input estiver diferente de sua respectiva key:

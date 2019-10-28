@@ -16,15 +16,51 @@
 
   <!-- Custom styles for this template -->
   <link href="../css/perfil.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/menu.css">
 </head>
 
-<body class="bg-light">
+<body >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html"><img title="Home" src="../images/icon.png" width="50px" height="50px" alt="" srcset=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <div class="container">
-    <div class="py-5 text-center">
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a id="meu-canil" class="nav-link" href="index.html"><strong>Meu canil</strong></a>
+                </li>
+            </ul>
+            <div class="form-search">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Pesquisar</button>
+                </div>
+            <div class="drop-down">
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button"
+                        data-toggle="dropdown"  id="user"   aria-haspopup="true" aria-expanded="false"> 
+                    </a>
+
+                    
+                    
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="perfil.html">Meu perfil</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="login.html">Sair</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+  <div class="container mt-5">
+    <!-- <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="../images/icon.png" alt="" width="72" height="72">
       <h2>Kennel Manager System</h2>
-    </div>
+    </div> -->
 
     <div class="row" class="col-md-2 mb-4">
 
@@ -92,7 +128,7 @@
 
           <hr class="mb-4">
           <div id="buttons">
-            <button class="btn btn-danger" id="btnCancel">Cancelar</button>
+            <button class="btn btn-danger"  id="btnCancel">Cancelar</button>
             <button class="btn btn-success" id="btnSave" type="submit">Salvar</button>
           </div>
         </article>
@@ -146,6 +182,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 <script  src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+    crossorigin="anonymous"></script>
 <script src="../js/perfil.js"></script>
+<script src="../js/menu.js"></script>
 
 </html>
