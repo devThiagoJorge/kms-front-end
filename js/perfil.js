@@ -57,8 +57,6 @@ function atualizaUser() {
     }
   });
 
-  console.log(alteracao);
-
   if (alteracao == true) {
 
     const user = {
@@ -86,6 +84,8 @@ function atualizaUser() {
           });
 
           alert('Dados salvos com sucesso!');
+
+          location.reload();
         }
       })
       .catch(function (error) {
@@ -95,6 +95,10 @@ function atualizaUser() {
     alert('Dados salvos com sucesso!');
   }
 }
+
+$('#btnCancel').click(function(){
+  window.location.href = "index.html";
+});
 
 $('#form input').each(function () {
   $(this).click(function(){
