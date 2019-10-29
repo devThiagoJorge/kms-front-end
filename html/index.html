@@ -15,41 +15,42 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html"><img title="Home" src="../images/icon.png" width="50px" height="50px" alt="" srcset=""></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+        <a class="navbar-brand" href="index.html">
+            <img title="Página inicial" src="../images/icon.png" width="50px" height="50px" alt="home">
+        </a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
             aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
 
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a id="meu-canil" class="nav-link" href="cadastro-canil.html"><strong>Meu canil</strong></a>
+                    <a id="meu-canil" class="nav-link" href="cadastro-canil.html">
+                        <button class="btn btn-dark" style="width: 150px;">Meu canil</button class="btn btn-dark">
+                    </a>
                 </li>
             </ul>
             <div class="form-search">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Pesquisar</button>
-                </div>
+                <input class="form-control mr-sm-2" style="width: 300px;" type="search" placeholder="Busque por raças, canis ou usuários" aria-label="Pesquisar">
+                <button class="btn btn-dark my-2 my-sm-0" type="submit">Pesquisar</button>
+            </div>
             <div class="drop-down">
                 <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" role="button"
-                        data-toggle="dropdown"  id="user"   aria-haspopup="true" aria-expanded="false"> 
+                    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="user"
+                        aria-haspopup="true" aria-expanded="false">
                     </a>
 
-                    
-                    
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="perfil.html">Meu perfil</a>
+                        <a id="meuPerfil" class="dropdown-item" href="perfil.html">Meu perfil</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="login.html">Sair</a>
+                        <a id="sair" class="dropdown-item" href="login.html">Sair</a>
                     </div>
                 </div>
             </div>
-
         </div>
     </nav>
-   
+
     <div class="buttons-filtros">
         <button class="btn btn-dark mt-1" id="btnAnimal">Animal</button>
         <button class="btn mt-1" id="btnKennel" style="width: 100%; background-color: #DCDCDC;">Canil</button>
