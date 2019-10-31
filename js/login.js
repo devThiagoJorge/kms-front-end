@@ -1,4 +1,4 @@
-$("#btnRequest").click(function() {
+$("#btnRequest").click(function () {
   var inputEmail = $("#inputEmail").val();
   var inputPassword = $("#inputPassword").val();
 
@@ -7,7 +7,7 @@ $("#btnRequest").click(function() {
       email: inputEmail,
       password: inputPassword
     })
-    .then(function(response) {
+    .then(function (response) {
       if (response.data.error != undefined) {
         if (response.data.errorId == "1") {
           //Troca cor do campo email para vermelho
@@ -19,16 +19,16 @@ $("#btnRequest").click(function() {
       } else {
         window.location.href = "index.html";
 
-     
+
         var obj = response.data.user;
 
-        Object.keys(obj).forEach(function(item) {
+        Object.keys(obj).forEach(function (item) {
           localStorage.setItem(item, obj[item]);
         });
-            localStorage.setItem('token', response.data.token);
+        localStorage.setItem('token', response.data.token);
       }
     })
-    .catch(function(error) {
+    .catch(function (error) {
       alert(error);
     });
 });

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- <link rel="icon" href="../../../../favicon.ico"> -->
+  <title>KMS - Meu canil</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="../css/meu-canil.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/menu.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">
+      <img title="Página inicial" src="../images/icon.png" width="50px" height="50px" alt="home">
+    </a>
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button> -->
+
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a id="meu-canil" class="nav-link" href="meu-canil.html">
+            <button class="btn btn-dark" style="width: 150px;">Meu canil</button class="btn btn-dark">
+          </a>
+        </li>
+      </ul>
+      <div class="form-search">
+        <input class="form-control mr-sm-2" style="width: 300px;" type="search"
+          placeholder="Busque por raças, canis ou usuários" aria-label="Pesquisar">
+        <button class="btn btn-dark my-2 my-sm-0" type="submit">Pesquisar</button>
+      </div>
+      <div class="drop-down">
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="user" aria-haspopup="true"
+            aria-expanded="false">
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a id="meuPerfil" class="dropdown-item" href="perfil.html">Meu perfil</a>
+            <div class="dropdown-divider"></div>
+            <a id="sair" class="dropdown-item" href="login.html">Sair</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <!-- <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="../images/icon.png" alt="" width="72" height="72">
+      <h2>Kennel Manager System</h2>
+    </div> -->
+
+    <div class="row" class="col-md-2 mb-4">
+
+      <div id="buttons" class="col-md-2 order-md-1 mb-4">
+        <!-- <a href="perfil.html" class="btn btn-dark" style="width: 100%;">Geral</a>
+        <a href="perfil-senha.html" class="btn mt-1" style="width: 100%; background-color: #DCDCDC;">Segurança</a> -->
+      </div>
+
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Meu canil</h4>
+
+        <article id="form">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="name">Nome</label>
+              <input id="name" type="text" class="form-control" readonly>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="email">E-mail para contato</label>
+              <input id="email" type="text" class="form-control" readonly>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-4 mb-3">
+              <label for="cep">CEP</label>
+              <input id="cep" type="text" class="form-control" readonly>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="estado">Estado</label>
+              <input id="estado" type="text" class="form-control" readonly>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="cidade">Cidade</label>
+              <input id="cidade" type="text" class="form-control" readonly>
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-4 mb-3">
+              <label for="bairro">Bairro</label>
+              <input id="bairro" type="text" class="form-control" readonly>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="rua">Rua</label>
+              <input id="rua" type="text" class="form-control" readonly>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="numero">Número</label>
+              <input id="numero" type="text" class="form-control" readonly>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="cellPhone">Celular</label>
+              <input id="cellPhone" type="text" class="form-control" readonly>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="homePhone">Telefone</label>
+              <input id="homePhone" type="text" class="form-control" readonly>
+            </div>
+          </div>
+
+          <hr class="mb-4">
+          <!-- <div id="buttons">
+            <button class="btn btn-danger" id="btnCancel">Cancelar</button>
+            <button class="btn btn-success" id="btnSave" type="submit">Salvar</button>
+          </div> -->
+        </article>
+
+      </div>
+
+      <div id="picture" class="col-md-2 order-md-2 mb-4">
+        <img id="kennel" src="../images/kennel-2.png" alt="kennel-picture">
+        <!-- <button style="width: 100%;" class="btn btn-dark mt-1">Alterar imagem</button> -->
+      </div>
+
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2019 KMS Team</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+    </footer>
+  </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+<script src="../js/meu-canil.js"></script>
+<script src="../js/menu.js"></script>
+
+</html>
