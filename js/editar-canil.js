@@ -1,7 +1,34 @@
+var kennel = null;
+
+function buscaCanil() {
+  
+  const kennelAdm = localStorage.getItem('_id');
+
+  const config = {
+    headers: { 'Authorization': "bearer " + localStorage.getItem('token') }
+  };
+
+  axios.get('http://localhost:3001/kennel/search?kennelAdm=' + kennelAdm, config)
+    .then(function (response) {
+      kennel = response.data;
+      Object.keys(kennel).forEach(function (attr) {
+        $('#' + attr).val(kennel[attr]);
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+$('#editarCanil').click(function(){
+  window.location.href = 'editar-canil.html';
+});
+
 $(document).ready(function () {
   $("#cellPhone").mask("(00)00000-0000");
   $("#homePhone").mask("(00)0000-0000");
   $("#cep").mask("00000-000");
+  buscaCanil();
 });
 
 $('#cep').keyup(function () {
@@ -37,7 +64,7 @@ $('#cep').keyup(function () {
 $('#btnSave').click(function () {
   validaCampos();
   if (validaCampos()) {
-    create();
+    update();
   }
 });
 
@@ -59,32 +86,29 @@ function validaCampos() {
   return continua;
 }
 
-function create() {
-  const kennel = {
-    name: $('#name').val(),
-    email: $('#email').val(),
-    cep: $('#cep').val(),
-    estado: $('#estado').val(),
-    cidade: $('#cidade').val(),
-    bairro: $('#bairro').val(),
-    rua: $('#rua').val(),
-    numero: $('#numero').val(),
-    cellPhone: $('#cellPhone').val(),
-    homePhone: $('#homePhone').val()
-  }
+function update() {
+
+  kennel.name = $('#name').val(),
+  kennel.email = $('#email').val(),
+  kennel.cep = $('#cep').val(),
+  kennel.estado = $('#estado').val(),
+  kennel.cidade = $('#cidade').val(),
+  kennel.bairro = $('#bairro').val(),
+  kennel.rua = $('#rua').val(),
+  kennel.numero = $('#numero').val(),
+  kennel.cellPhone = $('#cellPhone').val(),
+  kennel.homePhone = $('#homePhone').val()
 
   const config = {
     headers: { 'Authorization': "bearer " + localStorage.getItem('token') }
   };
 
-  axios.post('http://localhost:3001/kennel', kennel, config)
+  axios.put('http://localhost:3001/kennel/' + kennel._id, kennel, config)
     .then(function (response) {
-      console.log(response.data);
       if (response.data.error != undefined) {
-        alert('Erro ao criar canil');
+        alert('Erro ao editar canil');
       } else {
-        alert('Canil criado com sucesso!');
-        window.location.href = 'meu-canil.html'
+        alert('Canil editado com sucesso!');
       }
     })
     .catch(function (error) {
@@ -116,5 +140,5 @@ function changeBorderColor(inputId) {
 }
 
 $('#btnCancel').click(function () {
-  window.location.href = "index.html"
+  window.location.href = "meu-canil.html"
 });

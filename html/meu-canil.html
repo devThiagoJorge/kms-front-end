@@ -14,6 +14,8 @@
   <!-- Custom styles for this template -->
   <link href="../css/meu-canil.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/menu.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -21,17 +23,11 @@
     <a class="navbar-brand" href="index.html">
       <img title="Página inicial" src="../images/icon.png" width="50px" height="50px" alt="home">
     </a>
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
-            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
-        </button> -->
 
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a id="meu-canil" class="nav-link" href="meu-canil.html">
-            <button class="btn btn-dark" style="width: 150px;">Meu canil</button class="btn btn-dark">
-          </a>
+          <button class="btn btn-dark" style="width: 150px;">Meu canil</button class="btn btn-dark">
         </li>
       </ul>
       <div class="form-search">
@@ -55,16 +51,10 @@
     </div>
   </nav>
   <div class="container mt-5">
-    <!-- <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="../images/icon.png" alt="" width="72" height="72">
-      <h2>Kennel Manager System</h2>
-    </div> -->
 
     <div class="row" class="col-md-2 mb-4">
 
-      <div id="buttons" class="col-md-2 order-md-1 mb-4">
-        <!-- <a href="perfil.html" class="btn btn-dark" style="width: 100%;">Geral</a>
-        <a href="perfil-senha.html" class="btn mt-1" style="width: 100%; background-color: #DCDCDC;">Segurança</a> -->
+      <div id="buttons" class="col-md-2 order-md-1 mb-4">        
       </div>
 
       <div class="col-md-8 order-md-1">
@@ -134,19 +124,116 @@
           </div>
 
           <hr class="mb-4">
-          <!-- <div id="buttons">
-            <button class="btn btn-danger" id="btnCancel">Cancelar</button>
-            <button class="btn btn-success" id="btnSave" type="submit">Salvar</button>
-          </div> -->
+
+          <div id="buttons">
+            <button class="btn btn-dark" id="editarCanil">Editar canil</button>
+            <button class="btn btn-success" id="addAnimal">Adicionar animal</button>
+          </div>
+
         </article>
 
       </div>
 
       <div id="picture" class="col-md-2 order-md-2 mb-4">
         <img id="kennel" src="../images/kennel-2.png" alt="kennel-picture">
-        <!-- <button style="width: 100%;" class="btn btn-dark mt-1">Alterar imagem</button> -->
       </div>
 
+    </div>
+
+    <table class="table table-striped table-hover table-bordered" style="margin-top: 25px;">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome </th>
+          <th>Raça</th>
+          <th>Idade</th>
+          <th>Canil</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td id="imagem">
+            <img src="../images/cachorro.jpg" alt="">
+            <p>Tobias Top </p>
+          </td>
+          <td>Pinsher</td>
+          <td>5 anos</td>
+          <td>Canil Municipal de Matão</td>
+          <td>
+            <a href="#" class="view" title="Visualizar" data-toggle="tooltip">
+              <i class="material-icons">&#xE417;</i>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td id="imagem">
+            <img src="../images/cachorro.jpg" alt="">
+            <p>Tobias Top </p>
+          </td>
+          <td class="align-middle">Pinsher</td>
+          <td>5 anos</td>
+          <td>Canil Municipal de Matão</td>
+          <td>
+            <a href="#" class="view" title="Visualizar" data-toggle="tooltip">
+              <i class="material-icons">&#xE417;</i>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td id="imagem">
+            <img src="../images/cachorro.jpg" alt="">
+            <p>Tobias Top </p>
+          </td>
+          <td class="align-middle">Pinsher</td>
+          <td>5 anos</td>
+          <td>Canil Municipal de Matão</td>
+          <td>
+            <a href="#" class="view" title="Visualizar" data-toggle="tooltip">
+              <i class="material-icons">&#xE417;</i>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td id="imagem">
+            <img src="../images/cachorro.jpg" alt="">
+            <p>Tobias Top </p>
+          </td>
+          <td class="align-middle">Pinsher</td>
+          <td>5 anos</td>
+          <td>Canil Municipal de Matão</td>
+          <td>
+            <a href="#" class="view" title="Visualizar" data-toggle="tooltip">
+              <i class="material-icons">&#xE417;</i>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td id="imagem">
+            <img src="../images/cachorro.jpg" alt="">
+            <p>Tobias Top </p>
+          </td>
+          <td class="align-middle">Pinsher</td>
+          <td>5 anos</td>
+          <td>Canil Municipal de Matão</td>
+          <td>
+            <a href="#" class="view" title="Visualizar" data-toggle="tooltip">
+              <i class="material-icons">&#xE417;</i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="mb-4" style="margin: 35px 0 35px 0;">
+
+    <div id="buttons">
+      <button class="btn btn-danger" id="excluirCanil" style="width: 13%;">Excluir canil</button>
     </div>
 
     <footer class="my-5 pt-5 text-muted text-center text-small">
@@ -164,7 +251,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+  integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 <script src="../js/meu-canil.js"></script>
 <script src="../js/menu.js"></script>
 

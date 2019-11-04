@@ -4,30 +4,10 @@ $(document).ready(function () {
   $("#user").text(firstName + " " + lastName);
 });
 
-$('#btnMeuCanil').click(function () {    
-  buscaCanil();
+$('#btnMeuCanil').click(function () {
+  if (localStorage.getItem('hasKennel') == 'true') {
+    window.location.href = 'meu-canil.html';
+  } else {
+    window.location.href = 'meu-canil-cadastre.html';
+  }
 });
-
-function buscaCanil() {
-  const kennelAdm = localStorage.getItem('_id');  
-  const config = {
-    headers: { 'Authorization': "bearer " + localStorage.getItem('token') }
-  };
-
-  axios.get('http://localhost:3001/kennel/search?kennelAdm=' + kennelAdm, config)
-    .then(function (response) {
-      const kennel = response.data;
-    if (kennel == '') {                
-      localStorage.setItem("hasKennel", false);
-      } else {        
-        console.log(kennel._id);
-        localStorage.setItem("hasKennel", true);
-        localStorage.setItem("kennel", JSON.stringify(kennel));        
-      }
-      window.location.href = "meu-canil.html";
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-}
-
