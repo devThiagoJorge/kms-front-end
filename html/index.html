@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Listagem de animais</title>    
+    <title>Listagem de animais</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/menu.css">
@@ -18,17 +18,12 @@
         <a class="navbar-brand" href="index.html">
             <img title="Página inicial" src="../images/icon.png" width="50px" height="50px" alt="home">
         </a>
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
-            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
-        </button> -->
 
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <!-- <a class="nav-link" href="index.html"> -->
-                        <button id='btnMeuCanil' class="btn btn-dark" style="width: 150px;">Meu canil</button class="btn btn-dark">
-                    <!-- </a> -->
+                    <button id='btnMeuCanil' class="btn btn-dark" style="width: 150px;">Meu canil</button
+                        class="btn btn-dark">
                 </li>
             </ul>
             <div class="form-search">
@@ -53,192 +48,143 @@
     </nav>
 
     <div class="buttons-filtros">
-        <button class="btn btn-dark mt-1" id="btnAnimal">Animal</button>
-        <button class="btn mt-1" id="btnKennel" style="width: 100%; background-color: #DCDCDC;">Canil</button>
-        <button class="btn mt-1" id="btnUser" style="width: 100%; background-color: #DCDCDC;">Usuários</button>
+
     </div>
 
     <div class="container">
 
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <h2>Listagem de <b>animais</b></h2>
+        <div class="row" class="col-md-2 mb-4">
+            <div id="buttons" class="col-md-2 order-md-1 mb-4">
+                <button class="btn btn-dark mt-1" id="btnAnimal">Animal</button>
+                <button class="btn mt-1" id="btnKennel" style="width: 100%; background-color: #DCDCDC;">Canil</button>
+                <button class="btn mt-1" id="btnUser" style="width: 100%; background-color: #DCDCDC;">Usuários</button>
+            </div>
+            <div class="col-md-8 order-md-1">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h2>Listagem de <b>animais</b></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nome </th>
+                                <th>Raça</th>
+                                <th>Idade</th>
+                                <th>Canil</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td id="imagem">
+                                    <img src="../images/cachorro.jpg" alt="">
+                                    <p>Tobias Top </p>
+                                </td>
+                                <td>Pinsher</td>
+                                <td>5 anos</td>
+                                <td>Canil Municipal de Matão</td>
+                                <td>
+                                    <a href="#" class="view" title="Visualizar" data-toggle="tooltip">
+                                        <i class="material-icons">&#xE417;</i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td id="imagem">
+                                    <img src="../images/cachorro.jpg" alt="">
+                                    <p>Tobias Top </p>
+                                </td>
+                                <td class="align-middle">Pinsher</td>
+                                <td>5 anos</td>
+                                <td>Canil Municipal de Matão</td>
+                                <td>
+                                    <a href="#" class="view" title="Visualizar" data-toggle="tooltip">
+                                        <i class="material-icons">&#xE417;</i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td id="imagem">
+                                    <img src="../images/cachorro.jpg" alt="">
+                                    <p>Tobias Top </p>
+                                </td>
+                                <td class="align-middle">Pinsher</td>
+                                <td>5 anos</td>
+                                <td>Canil Municipal de Matão</td>
+                                <td>
+                                    <a href="#" class="view" title="Visualizar" data-toggle="tooltip">
+                                        <i class="material-icons">&#xE417;</i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td id="imagem">
+                                    <img src="../images/cachorro.jpg" alt="">
+                                    <p>Tobias Top </p>
+                                </td>
+                                <td class="align-middle">Pinsher</td>
+                                <td>5 anos</td>
+                                <td>Canil Municipal de Matão</td>
+                                <td>
+                                    <a href="#" class="view" title="Visualizar" data-toggle="tooltip">
+                                        <i class="material-icons">&#xE417;</i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td id="imagem">
+                                    <img src="../images/cachorro.jpg" alt="">
+                                    <p>Tobias Top </p>
+                                </td>
+                                <td class="align-middle">Pinsher</td>
+                                <td>5 anos</td>
+                                <td>Canil Municipal de Matão</td>
+                                <td>
+                                    <a href="#" class="view" title="Visualizar" data-toggle="tooltip">
+                                        <i class="material-icons">&#xE417;</i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="clearfix">
+                        <div class="hint-text">Mostrando <b>5</b> resultados de <b>15</b></div>
+                        <ul class="pagination">
+                            <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                            <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                            <li class="page-item"><a href="#" class="page-link">2</a></li>
+                            <li class="page-item"><a href="#" class="page-link">3</a></li>
+                            <li class="page-item"><a href="#" class="page-link">4</a></li>
+                            <li class="page-item"><a href="#" class="page-link">5</a></li>
+                            <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+
+
             </div>
-            <table class="table table-striped table-hover table-bordered">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Nome </th>
-                        <th>Raça</th>
-                        <th>Idade</th>
-                        <th>Canil</th>
-                        <th>Ação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td id="imagem">
-                            <img src="../images/cachorro.jpg" alt="">
-                            <p>Tobias Top </p>
-                        </td>
-                        <td>Pinsher</td>
-                        <td>5 anos</td>
-                        <td>Canil Municipal de Matão</td>
-                        <td>
-                            <a href="#" class="view" title="Visualizar" data-toggle="tooltip">
-                                <i class="material-icons">&#xE417;</i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td id="imagem">
-                            <img src="../images/cachorro.jpg" alt="">
-                            <p>Tobias Top </p>
-                        </td>
-                        <td class="align-middle">Pinsher</td>
-                        <td>5 anos</td>
-                        <td>Canil Municipal de Matão</td>
-                        <td>
-                            <a href="#" class="view" title="Visualizar" data-toggle="tooltip">
-                                <i class="material-icons">&#xE417;</i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td id="imagem">
-                            <img src="../images/cachorro.jpg" alt="">
-                            <p>Tobias Top </p>
-                        </td>
-                        <td class="align-middle">Pinsher</td>
-                        <td>5 anos</td>
-                        <td>Canil Municipal de Matão</td>
-                        <td>
-                            <a href="#" class="view" title="Visualizar" data-toggle="tooltip">
-                                <i class="material-icons">&#xE417;</i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td id="imagem">
-                            <img src="../images/cachorro.jpg" alt="">
-                            <p>Tobias Top </p>
-                        </td>
-                        <td class="align-middle">Pinsher</td>
-                        <td>5 anos</td>
-                        <td>Canil Municipal de Matão</td>
-                        <td>
-                            <a href="#" class="view" title="Visualizar" data-toggle="tooltip">
-                                <i class="material-icons">&#xE417;</i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td id="imagem">
-                            <img src="../images/cachorro.jpg" alt="">
-                            <p>Tobias Top </p>
-                        </td>
-                        <td class="align-middle">Pinsher</td>
-                        <td>5 anos</td>
-                        <td>Canil Municipal de Matão</td>
-                        <td>
-                            <a href="#" class="view" title="Visualizar" data-toggle="tooltip">
-                                <i class="material-icons">&#xE417;</i>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="clearfix">
-                <div class="hint-text">Mostrando <b>5</b> resultados de <b>15</b></div>
-                <ul class="pagination">
-                    <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item"><a href="#" class="page-link">3</a></li>
-                    <li class="page-item"><a href="#" class="page-link">4</a></li>
-                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                    <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+
+        </div> <!-- row -->
+
+
     </div>
 </body>
-<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
-crossorigin="anonymous"></script>
+    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+    crossorigin="anonymous"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="../js/menu.js"></script>
 
 </html>
-
-
-<!--  ************************************ Botão search do lado -->
-<!-- 
-<div class="col-sm-4">
-    <div class="search-box">
-        <i class="material-icons">&#xE8B6;</i>
-        <input type="text" class="form-control" placeholder="Search&hellip;">
-    </div>
-
-    
-
-</div> -->
-
-
-
-<!-- .search-box {
-  position: relative;        
-  float: right;
-}
-.search-box input {
-  height: 34px;
-  border-radius: 20px;
-  padding-left: 35px;
-  border-color: #ddd;
-  box-shadow: none;
-}
-.search-box input:focus {
-border-color: #3FBAE4;
-}
-.search-box i {
-  color: #a0a5b1;
-  position: absolute;
-  font-size: 19px;
-  top: 8px;
-  left: 10px;
-} -->
-
-
-
-
-
-<!-- Icone de ordem crescente decrescente 
-
-<i class="fa fa-sort"></i>
-
--->
-
-
-
-
-<!-- Algun icones 
-  <td>
-   <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
--->
