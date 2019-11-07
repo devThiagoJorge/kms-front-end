@@ -32,6 +32,10 @@ $('#editarCanil').click(function () {
   window.location.href = 'editar-canil.html';
 });
 
+$('#addAnimal').click(function () {
+  window.location.href = 'cadastro-animal.html';
+});
+
 $('#excluirCanil').click(function () {
   const message = "Para confirmar a exclusão, digite o nome do canil " + kennelName + '.'
   if (window.prompt(message) == kennelName) {

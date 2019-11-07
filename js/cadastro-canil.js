@@ -35,8 +35,7 @@ $('#cep').keyup(function () {
 });
 
 $('#btnSave').click(function () {
-  validaCampos();
-  if (validaCampos()) {
+  if (validaCampos() == true) {
     create();
   }
 });

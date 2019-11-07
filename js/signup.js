@@ -32,7 +32,7 @@ $("#btnRegister").click(function() {
   var inputPassword = $("#inputPassword").val();
   var inputFirstName = $("#inputFirstName").val();
   var inputLastName = $("#inputLastName").val();
-  var inputCellPhone = $("#inputCellphone").val();
+  var inputCellphone = $("#inputCellphone").val();
   var inputHomePhone = $("#inputHomePhone").val();
   var inputCep = $("#inputCep").val();
   var inputState = $("#inputState").val();
@@ -44,7 +44,7 @@ $("#btnRegister").click(function() {
       lastName: inputLastName,
       email: inputEmail,
       password: inputPassword,
-      cellPhone: inputCellPhone,
+      cellphone: inputCellphone,
       homePhone: inputHomePhone,
       cep: inputCep,
       state: inputState,
