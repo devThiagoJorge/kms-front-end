@@ -1,6 +1,7 @@
-
+page = 1;
 $("#btnSearch").click(function () {
     searchUser();
+    paginacao();
 });
 
 function splitReturnFirstName(firstName) {
@@ -9,7 +10,6 @@ function splitReturnFirstName(firstName) {
     firstName = stringSplit[0];
     return firstName;
 }
-
 function splitReturnLastName(lastName) {
     var inputSearch = $("#inputSearch").val();
     var stringSplit = inputSearch.split(" ");
@@ -18,8 +18,8 @@ function splitReturnLastName(lastName) {
     tamanho = tamanho - 1;
 
     lastName = stringSplit[tamanho];
-    if (tamanho == 0) {
-        lastName = " ";
+    if (tamanho == 0 || lastName == '') {
+        lastName = undefined;
     }
     return lastName;
 }
@@ -29,16 +29,19 @@ function searchUser() {
     var firstName, lastName;
     firstName = splitReturnFirstName(firstName);
     lastName = splitReturnLastName(lastName);
-
-    axios.get("http://localhost:3001/user/search?firstName=" + firstName + "&lastName=" + lastName)
+    var q = '&firstName=' + firstName;
+    if (lastName != undefined) {
+        q = q + "&lastName=" + lastName;
+    }
+   
+    console.log(page);
+    axios.get("http://localhost:3001/user/search?page=" + page + q )
         .then(function (response) {
-
-            var obj = response.data.users;
-
+            var obj = response.data.users.docs;
+            console.log(obj);
             var tamanho = obj.length;
-
             for (var i = 0; i < tamanho; i++) {
-                obj = response.data.users[i];
+                obj = response.data.users.docs[i];
                 $("#lista").append(
                     '<tr>' +
                     '<td>' + parseInt(i + 1) + '</td>' +
@@ -56,4 +59,29 @@ function searchUser() {
         });
 }
 
+
+function paginacao(){
+    $("#paginacao").empty();
+    var firstName, lastName;
+    firstName = splitReturnFirstName(firstName);
+    lastName = splitReturnLastName(lastName);
+    var q = '&firstName=' + firstName;
+    if (lastName != undefined) {
+        q = q + "&lastName=" + lastName;
+    }
+    axios.get("http://localhost:3001/user/search?page=" + page + q )
+        .then(function (response) {
+            var tamanho = response.data.users.total;
+            console.log(tamanho);
+            var number = 1;
+            for(var i=0; i < tamanho; i+=5){
+                $("#paginacao").append('<li id="page" class="page-item"><a href="#" class="page-link">'+ parseInt(number) +'</a></li>');
+                number ++;
+            }
+            
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
 
