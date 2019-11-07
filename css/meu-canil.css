@@ -6,11 +6,11 @@ body{
   text-align: center;
 }
 
-#btnCancel, #btnSave{
+#editarCanil, #addAnimal{
   width: 25%;  
 }
 
-#userImg{
+#kennel{
   width: 100%;
   cursor: pointer;
 }

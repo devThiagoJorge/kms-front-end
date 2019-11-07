@@ -52,3 +52,7 @@ function atualizaSenha() {
       console.log(error);
     });
 }
+
+$('#btnCancel').click(function () {
+  window.location.href = "index.html"
+});

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- <link rel="icon" href="../../../../favicon.ico"> -->
+  <title>KMS - Meu canil</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="../css/meu-canil.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/menu.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">
+      <img title="Página inicial" src="../images/icon.png" width="50px" height="50px" alt="home">
+    </a>
+
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <button class="btn btn-dark" style="width: 150px;">Meu canil</button class="btn btn-dark">
+        </li>
+      </ul>
+      <div class="form-search">
+        <input class="form-control mr-sm-2" style="width: 300px;" type="search"
+          placeholder="Busque por raças, canis ou usuários" aria-label="Pesquisar">
+        <button class="btn btn-dark my-2 my-sm-0" type="submit">Pesquisar</button>
+      </div>
+      <div class="drop-down">
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="user" aria-haspopup="true"
+            aria-expanded="false">
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a id="meuPerfil" class="dropdown-item" href="perfil.html">Meu perfil</a>
+            <div class="dropdown-divider"></div>
+            <a id="sair" class="dropdown-item" href="login.html">Sair</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+
+    <div class="row" class="col-md-2 mb-4">
+
+      <div id="buttons" class="col-md-2 order-md-1 mb-4">
+      </div>
+
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Meu canil</h4>
+
+        <article id="form">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="name">Nome</label>
+              <input id="name" type="text" class="form-control" readonly>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="email">E-mail para contato</label>
+              <input id="email" type="text" class="form-control" readonly>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-4 mb-3">
+              <label for="cep">CEP</label>
+              <input id="cep" type="text" class="form-control" readonly>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="estado">Estado</label>
+              <input id="estado" type="text" class="form-control" readonly>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="cidade">Cidade</label>
+              <input id="cidade" type="text" class="form-control" readonly>
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-4 mb-3">
+              <label for="bairro">Bairro</label>
+              <input id="bairro" type="text" class="form-control" readonly>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="rua">Rua</label>
+              <input id="rua" type="text" class="form-control" readonly>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="numero">Número</label>
+              <input id="numero" type="text" class="form-control" readonly>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="cellPhone">Celular</label>
+              <input id="cellPhone" type="text" class="form-control" readonly>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="homePhone">Telefone</label>
+              <input id="homePhone" type="text" class="form-control" readonly>
+            </div>
+          </div>
+
+          <hr class="mb-4">
+
+          <div id="buttons">
+            <button class="btn btn-dark" id="editarCanil">Editar canil</button>
+            <button class="btn btn-success" id="addAnimal">Adicionar animal</button>
+          </div>
+
+        </article>
+
+      </div>
+
+      <div id="picture" class="col-md-2 order-md-2 mb-4">
+        <img id="kennel" src="../images/kennel-2.png" alt="kennel-picture">
+      </div>
+
+    </div>
+
+    <table class="table table-striped table-hover table-bordered" style="margin-top: 25px;">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome </th>
+          <th>Raça</th>
+          <th>Idade</th>
+          <th>Canil</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td id="imagem">
+            <img src="../images/cachorro.jpg" alt="">
+            <p>Tobias Top </p>
+          </td>
+          <td>Pinsher</td>
+          <td>5 anos</td>
+          <td>Canil Municipal de Matão</td>
+          <td>
+            <!-- <a href="#" class="view" title="Visualizar" data-toggle="tooltip"> -->
+            <i class="material-icons m-1" style="cursor: pointer; color: #007bff;">&#xE417;</i>
+            <i class="material-icons m-1" style="cursor: pointer;">edit</i>
+            <i class="material-icons m-1" style="cursor: pointer; color: #dc3545;">delete</i>
+            <!-- </a> -->
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td id="imagem">
+            <img src="../images/cachorro.jpg" alt="">
+            <p>Tobias Top </p>
+          </td>
+          <td class="align-middle">Pinsher</td>
+          <td>5 anos</td>
+          <td>Canil Municipal de Matão</td>
+          <td>
+            <i class="material-icons m-1" style="cursor: pointer; color: #007bff;">&#xE417;</i>
+            <i class="material-icons m-1" style="cursor: pointer;">edit</i>
+            <i class="material-icons m-1" style="cursor: pointer; color: #dc3545;">delete</i>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td id="imagem">
+            <img src="../images/cachorro.jpg" alt="">
+            <p>Tobias Top </p>
+          </td>
+          <td class="align-middle">Pinsher</td>
+          <td>5 anos</td>
+          <td>Canil Municipal de Matão</td>
+          <td>
+            <i class="material-icons m-1" style="cursor: pointer; color: #007bff;">&#xE417;</i>
+            <i class="material-icons m-1" style="cursor: pointer;">edit</i>
+            <i class="material-icons m-1" style="cursor: pointer; color: #dc3545;">delete</i>
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td id="imagem">
+            <img src="../images/cachorro.jpg" alt="">
+            <p>Tobias Top </p>
+          </td>
+          <td class="align-middle">Pinsher</td>
+          <td>5 anos</td>
+          <td>Canil Municipal de Matão</td>
+          <td>
+            <i class="material-icons m-1" style="cursor: pointer; color: #007bff;">&#xE417;</i>
+            <i class="material-icons m-1" style="cursor: pointer;">edit</i>
+            <i class="material-icons m-1" style="cursor: pointer; color: #dc3545;">delete</i>
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td id="imagem">
+            <img src="../images/cachorro.jpg" alt="">
+            <p>Tobias Top </p>
+          </td>
+          <td class="align-middle">Pinsher</td>
+          <td>5 anos</td>
+          <td>Canil Municipal de Matão</td>
+          <td>
+            <i class="material-icons m-1" style="cursor: pointer; color: #007bff;">&#xE417;</i>
+            <i class="material-icons m-1" style="cursor: pointer;">edit</i>
+            <i class="material-icons m-1" style="cursor: pointer; color: #dc3545;">delete</i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="mb-4" style="margin: 35px 0 35px 0;">
+
+    <div id="buttons">
+      <button class="btn btn-danger" id="excluirCanil" style="width: 13%;">Excluir canil</button>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2019 KMS Team</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+    </footer>
+  </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+  integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+<script src="../js/meu-canil.js"></script>
+<script src="../js/menu.js"></script>
+
+</html>

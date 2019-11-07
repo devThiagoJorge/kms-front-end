@@ -32,7 +32,7 @@ $("#btnRegister").click(function() {
   var inputPassword = $("#inputPassword").val();
   var inputFirstName = $("#inputFirstName").val();
   var inputLastName = $("#inputLastName").val();
-  var inputCellPhone = $("#inputCellphone").val();
+  var inputCellphone = $("#inputCellphone").val();
   var inputHomePhone = $("#inputHomePhone").val();
   var inputCep = $("#inputCep").val();
   var inputState = $("#inputState").val();
@@ -44,7 +44,7 @@ $("#btnRegister").click(function() {
       lastName: inputLastName,
       email: inputEmail,
       password: inputPassword,
-      cellPhone: inputCellPhone,
+      cellphone: inputCellphone,
       homePhone: inputHomePhone,
       cep: inputCep,
       state: inputState,
@@ -62,15 +62,17 @@ $("#btnRegister").click(function() {
           alert("Erro ao cadastrar usuario.");
         }
       } else {
-        console.log(response.data);
-        window.location.href = "index.html";
+        localStorage.setItem("hasKennel", false);
 
         var obj = response.data.user;
 
         Object.keys(obj).forEach(function(item) {
           localStorage.setItem(item, obj[item]);
         });
+
         localStorage.setItem("token", response.data.token);
+
+        window.location.href = "index.html";
       }
     })
     .catch(function(error) {

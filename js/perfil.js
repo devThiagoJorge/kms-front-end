@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#cellPhone").mask("(00)00000-0000");
+  $("#cellphone").mask("(00)00000-0000");
   $("#homePhone").mask("(00)0000-0000");
   $("#cep").mask("00000-000");
 });
@@ -41,7 +41,7 @@ $('#btnSave').click(function () {
 function validaCampos() {
   let continua = true;
   $('#form input').each(function () {
-    if ($(this).val() == '' && ( $(this).attr('id') != 'cellPhone' && $(this).attr('id') != 'homePhone') ){
+    if ($(this).val() == '' && ( $(this).attr('id') != 'cellphone' && $(this).attr('id') != 'homePhone') ){
       $(this).css('border-color', 'red');
       continua = false;
     }
@@ -63,7 +63,7 @@ function atualizaUser() {
       firstName: $('#firstName').val(),
       lastName: $('#lastName').val(),
       email: $('#email').val(),
-      cellPhone: $('#cellPhone').val(),
+      cellphone: $('#cellphone').val(),
       homePhone: $('#homePhone').val(),
       cep: $('#cep').val(),
       state: $('#state').val(),

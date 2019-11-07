@@ -7,12 +7,12 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <!-- <link rel="icon" href="../../../../favicon.ico"> -->
-  <title>KMS - Perfil</title>
+  <title>KMS - Meu canil</title>
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- Custom styles for this template -->
-  <link href="../css/perfil.css" rel="stylesheet">
+  <link href="../css/meu-canil-cadastre.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/menu.css">
 </head>
 
@@ -20,11 +20,16 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="index.html">
       <img title="Página inicial" src="../images/icon.png" width="50px" height="50px" alt="home">
-    </a>  
+    </a>
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button> -->
+
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <!-- <a id="meu-canil" class="nav-link" href="cadastro-canil.html"> -->
+          <!-- <a id="meu-canil" class="nav-link" href="meu-canil.html"> -->
             <button id='btnMeuCanil' class="btn btn-dark" style="width: 150px;">Meu canil</button class="btn btn-dark">
           <!-- </a> -->
         </li>
@@ -49,7 +54,6 @@
       </div>
     </div>
   </nav>
-
   <div class="container mt-5">
     <!-- <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="../images/icon.png" alt="" width="72" height="72">
@@ -59,74 +63,24 @@
     <div class="row" class="col-md-2 mb-4">
 
       <div id="buttons" class="col-md-2 order-md-1 mb-4">
-        <a href="perfil.html" class="btn btn-dark" style="width: 100%;">Geral</a>
-        <a href="perfil-senha.html" class="btn mt-1" style="width: 100%; background-color: #DCDCDC;">Segurança</a>
+        <!-- <a href="perfil.html" class="btn btn-dark" style="width: 100%;">Geral</a>
+        <a href="perfil-senha.html" class="btn mt-1" style="width: 100%; background-color: #DCDCDC;">Segurança</a> -->
       </div>
 
       <div class="col-md-8 order-md-1">
-        <h4 class="mb-3">Editar perfil</h4>
-
-        <article id="form">
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="firstName">Primeiro nome</label>
-              <input type="text" class="form-control" id="firstName">
-            </div>
-
-            <div class="col-md-6 mb-3">
-              <label for="lastName">Sobrenome</label>
-              <input type="text" class="form-control" id="lastName">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12 mb-3">
-              <label for="email">E-mail</label>
-              <input type="email" class="form-control" id="email" readonly>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="cellphone">Celular</label>
-              <input id="cellphone" type="text" class="form-control">
-            </div>
-
-            <div class="col-md-6 mb-3">
-              <label for="homePhone">Telefone</label>
-              <input id="homePhone" type="text" class="form-control">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-4 mb-3">
-              <label for="cep">CEP</label>
-              <input id="cep" type="text" class="form-control">
-            </div>
-
-            <div class="col-md-4 mb-3">
-              <label for="state">Estado</label>
-              <input id="state" type="text" class="form-control" readonly>
-            </div>
-
-            <div class="col-md-4 mb-3">
-              <label for="city">Cidade</label>
-              <input id="city" type="text" class="form-control" readonly>
-            </div>
-          </div>
-
-          <hr class="mb-4">
-          <div id="buttons">
-            <button class="btn btn-danger" id="btnCancel">Cancelar</button>
-            <button class="btn btn-success" id="btnSave" type="submit">Salvar</button>
-          </div>
-        </article>
-
+        <h4 class="mb-3">Meu canil</h4>
+        <hr>
+        <p>Você não administra nenhum canil, crie um agora mesmo!</p>
+        <div id="buttons">          
+          <a href="cadastro-canil.html">
+            <button class="btn btn-success" id="btnSave" type="submit" style="margin-top: 25px;">Criar canil</button>
+          </a>
+        </div>
       </div>
 
       <div id="picture" class="col-md-2 order-md-2 mb-4">
-        <img id="userImg" src="../images/user.jpg" alt="user-picture">
-        <button style="width: 100%;" class="btn btn-dark mt-1">Alterar</button>
+        <!-- <img id="kennel" src="../images/kennel-2.png" alt="kennel-picture"> -->
+        <!-- <button style="width: 100%;" class="btn btn-dark mt-1">Alterar imagem</button> -->
       </div>
 
     </div>
@@ -147,7 +101,7 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
   integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-<script src="../js/perfil.js"></script>
+<script src="../js/meu-canil.js"></script>
 <script src="../js/menu.js"></script>
 
 </html>
