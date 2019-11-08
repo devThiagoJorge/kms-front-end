@@ -1,7 +1,6 @@
-page = 1;
+
 $("#btnSearch").click(function () {
-    searchUser();
-    paginacao();
+    searchUser(1);
 });
 
 function splitReturnFirstName(firstName) {
@@ -24,7 +23,7 @@ function splitReturnLastName(lastName) {
     return lastName;
 }
 
-function searchUser() {
+function searchUser(page) {
     $("#lista").empty();
     var firstName, lastName;
     firstName = splitReturnFirstName(firstName);
@@ -33,9 +32,10 @@ function searchUser() {
     if (lastName != undefined) {
         q = q + "&lastName=" + lastName;
     }
-   
+    // var page = 1;
+
     console.log(page);
-    axios.get("http://localhost:3001/user/search?page=" + page + q )
+    axios.get("http://localhost:3001/user/search?page=" + page + q)
         .then(function (response) {
             var obj = response.data.users.docs;
             console.log(obj);
@@ -53,6 +53,12 @@ function searchUser() {
                     '</tr>'
                 )
             }
+            var tamanho = response.data.users.total;
+            
+            var quantidadeRegistros = response.data.users.docs.length;
+    
+            paginacao(tamanho, page, quantidadeRegistros);
+
         })
         .catch(function (error) {
             console.log(error);
@@ -60,28 +66,16 @@ function searchUser() {
 }
 
 
-function paginacao(){
+function paginacao(tamanho, number,quantidadeRegistros) {
     $("#paginacao").empty();
-    var firstName, lastName;
-    firstName = splitReturnFirstName(firstName);
-    lastName = splitReturnLastName(lastName);
-    var q = '&firstName=' + firstName;
-    if (lastName != undefined) {
-        q = q + "&lastName=" + lastName;
+   
+    $("#message").empty();
+   
+    for (var i = 0; i < tamanho; i += 7) {
+        $("#paginacao").append('<li class="page-item"><button onclick="searchUser(' + parseInt(number) + ');"  class="page-link">' + parseInt(number) + '</button></li>');
+        number++;
     }
-    axios.get("http://localhost:3001/user/search?page=" + page + q )
-        .then(function (response) {
-            var tamanho = response.data.users.total;
-            console.log(tamanho);
-            var number = 1;
-            for(var i=0; i < tamanho; i+=5){
-                $("#paginacao").append('<li id="page" class="page-item"><a href="#" class="page-link">'+ parseInt(number) +'</a></li>');
-                number ++;
-            }
-            
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+    $("#message").append("Mostrando <b>"+quantidadeRegistros+"</b> resultados de <b>" + tamanho + "</b>");
+
 }
 
