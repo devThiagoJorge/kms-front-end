@@ -1,9 +1,9 @@
 $('#btnSave').click(function () {  
   buscaCanil()
-    .then(kennel => {      
+    .then(kennel => {
       console.log(kennel)
       create(kennel);
-    })  
+    });
 });
 
 function validaCampos() {
