@@ -15,24 +15,36 @@ body{
   cursor: pointer;
 }
 
-#imagem img {
+#data imagem {
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  position: relative;
-  left: 20%;
-  transform: translate(-20%);
-  float:left;
-  margin-right: 35px;  
+  /* position: relative; */
+  /* left: 20%; */
+  /* transform: translate(-20%); */
+  vertical-align: middle;
+  /* margin-right: 35px;   */
 }
 
-#imagem p {
+table.table #imagem {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/* #imagem p {
   margin-left: auto;
   margin-right: auto;
   margin-top: 19px;
-  /* color: blue; */
-}
+  color: blue;
+} */
 
-#imagem {
-  /* background-color: red; */
+/* #imagem {
+  background-color: red;
+} */
+
+#data td{  
+  vertical-align: middle;
 }
