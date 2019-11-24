@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Listagem de animais</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/usuario-lista.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html"><img title="Home" src="../images/icon.png" width="50px" height="50px" alt="" srcset=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a id="meu-canil" class="nav-link" href="cadastro-canil.html"><strong>Meu canil</strong></a>
+                </li>
+            </ul>
+            <div class="form-search">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Pesquisar</button>
+                </div>
+            <div class="drop-down">
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button"
+                        data-toggle="dropdown"  id="user"   aria-haspopup="true" aria-expanded="false"> 
+                    </a>
+
+                    
+                    
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="perfil.html">Meu perfil</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="login.html">Sair</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+   
+    <div class="buttons-filtros">
+        <button class="btn btn-dark mt-1" id="btnAnimal">Animal</button>
+        <button class="btn mt-1" id="btnKennel" style="width: 100%; background-color: #DCDCDC;">Canil</button>
+        <button class="btn mt-1" id="btnUser" style="width: 100%; background-color: #DCDCDC;">Usuários</button>
+    </div>
+    <div class="container">
+
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h2>Listagem de <b>animais</b></h2>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nome </th>
+                        <th>Raça</th>
+                        <th>Idade</th>
+                        <th>Canil</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td id="imagem">
+                            <img src="../images/cachorro.jpg" alt="">
+
+                        </td>
+
+                        <td>Pinsher</td>
+                        <td>5 anos</td>
+                        <td>Canil Municipal de Matão</td>
+                        <td>
+                            <a href="#" class="view" title="View" data-toggle="tooltip">
+                                <i class="material-icons">&#xE417;</i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>1</td>
+                        <td id="imagem">
+                            <img src="../images/cachorro.jpg" alt="">
+                            <p>Tobias Top </p>
+                        </td>
+
+                        <td class="align-middle">Pinsher</td>
+                        <td>5 anos</td>
+                        <td>Canil Municipal de Matão</td>
+                        <td>
+                            <a href="#" class="view" title="View" data-toggle="tooltip">
+                                <i class="material-icons">&#xE417;</i>
+                            </a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <div class="clearfix">
+                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                <ul class="pagination">
+                   
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://pagination.js.org/dist/2.1.5/pagination.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../js/usuario-lista.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+    crossorigin="anonymous"></script>
+<script src="../js/menu.js"></script>
+
+</html>
