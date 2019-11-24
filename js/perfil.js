@@ -58,7 +58,6 @@ function atualizaUser() {
   });
 
   if (alteracao == true) {
-
     const user = {
       firstName: $('#firstName').val(),
       lastName: $('#lastName').val(),

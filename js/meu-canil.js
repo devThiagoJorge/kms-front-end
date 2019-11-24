@@ -1,5 +1,6 @@
 var kennelName = null;
 var kennelId = null;
+var dogs = [];
 
 $(document).ready(function () {
   buscaCanil()
@@ -44,10 +45,15 @@ $('#addAnimal').click(function () {
 
 $('#excluirCanil').click(function () {
   const message = "Para confirmar a exclusão, digite o nome do canil " + kennelName + '.'
-  if (window.prompt(message) == kennelName) {
-    excluirCanil();
-  } else {
-    alert('Nome inválido!')
+
+  var kennelNameRes = window.prompt(message);
+
+  if (kennelNameRes != null) {
+    if (kennelNameRes == kennelName) {
+      excluirCanil();
+    } else {
+      alert('Nome inválido!')
+    }
   }
 });
 
@@ -84,10 +90,11 @@ function listDogs(kennel) {
     return 0;
   });
 
-  console.log(kennel.dogs);
-
   let i = 0;
   kennel.dogs.forEach(dog => {
+
+    dogs.push(dog);
+
     i++;
     $("#data").append(
       '<tr>' +
@@ -99,11 +106,11 @@ function listDogs(kennel) {
       '<td>' + dog.age + '</td>' +
       '<td>' + dog.size + '</td>' +
       '<td>' +
-      '<button onclick="viewDog('+`dog._id`+')"> <i class="material-icons m-1" style="cursor: pointer; color: #007bff;">&#xE417;</i> </button>' +
-      '<i id="editDog" class="material-icons m-1" style="cursor: pointer;">edit</i>' +
-      '<i id="deleteDog" class="material-icons m-1" style="cursor: pointer; color: #dc3545;">delete</i>' +
+      '<button id="' + i + '" onclick="viewDog(this)"> <i class="material-icons m-1" style="cursor: pointer; color: #007bff;">&#xE417;</i> </button>' +
+      '<button id="' + i + '" onclick="editDog(this)"> <i id="editDog" class="material-icons m-1" style="cursor: pointer;">edit</i> </button>' +
+      '<button id="' + i + '" onclick="deleteDog(this)"> <i id="deleteDog" class="material-icons m-1" style="cursor: pointer; color: #dc3545;">delete</i> </button>' +
       '</td>' +
-      '<td>' + dog._id + '</td>' +
+      '<td style="display: none;">' + dog._id + '</td>' +
       '</tr>'
     );
   });
@@ -132,6 +139,47 @@ function calculaIdade(kennel) {
   });
 }
 
-function viewDog(id) {
-  alert(id);
+function viewDog(button) {
+  // console.log(dogs[button.id - 1]._id);
+  localStorage.setItem('dogId', dogs[button.id - 1]._id);
+  window.location = "visualizar-animal.html";
+
+}
+
+function editDog(button) {
+  // console.log(dogs[button.id - 1]._id);
+  localStorage.setItem('dogId', dogs[button.id - 1]._id);
+  window.location = "editar-animal.html";
+}
+
+function deleteDog(button) {
+  localStorage.setItem('dogId', dogs[button.id - 1]._id);
+
+  const message = "Para confirmar a exclusão de " + dogs[button.id - 1].name + ", digite seu nome: ";
+
+  var dogName = window.prompt(message);
+
+  if (dogName != null) {
+    if (dogName == dogs[button.id - 1].name) {
+      const config = {
+        headers: { 'Authorization': "bearer " + localStorage.getItem('token') }
+      };
+
+      axios.delete('http://localhost:3001/dog/' + localStorage.getItem('dogId'), config)
+        .then(function (response) {
+          if (response.data.error != undefined) {
+            alert('Erro ao excluir animal.');
+          } else {
+            localStorage.setItem('hasKennel', false);
+            alert('Animal excluído!');
+            window.location.href = 'meu-canil.html';
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } else {
+      alert('Nome inválido!')
+    }
+  }
 }

@@ -48,3 +48,7 @@ table.table #imagem {
 #data td{  
   vertical-align: middle;
 }
+
+#data button{  
+  margin-left: 2px;
+}
