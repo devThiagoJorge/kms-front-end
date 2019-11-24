@@ -1,0 +1,15 @@
+body{
+  background-color: #f5f5f5;
+}
+#buttons{
+  text-align: center;
+}
+
+#btnVoltar, #btnSave{
+  width: 25%;  
+}
+
+#kennel{
+  width: 100%;
+  cursor: pointer;
+}

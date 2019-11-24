@@ -28,7 +28,7 @@ function searchDogs(page) {
           parseInt(i + 1) +
           "</td>" +
           "<td>" +
-          '<img id="imagem" src="../images/cachorro.jpg" alt="dog-image">' +
+          '<img id="imagem" src="../images/dog-2.png" alt="dog-image">' +
           obj.name +
           "</td>" +
           "<td>" +

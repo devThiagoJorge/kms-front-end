@@ -8,7 +8,6 @@ $(document).ready(function () {
 
 function searchKennels(page) {
   empty();
-
   const config = {
     headers: { 'Authorization': "bearer " + localStorage.getItem('token') }
   };
@@ -20,13 +19,18 @@ function searchKennels(page) {
     .then(function (response) {
       var obj = response.data.kennels.docs;
 
+      kennels = [];
+
+      obj.forEach(kennel => {
+        kennels.push(kennel);
+      });
+
       console.log(obj)
 
       var tamanho = obj.length;
 
       for (var i = 0; i < tamanho; i++) {
         obj = response.data.kennels.docs[i];
-        kennels.push(obj);
         console.log(obj);
         $("#data").append(
           "<tr>" +
@@ -122,8 +126,6 @@ function empty() {
 }
 
 function viewDog(button) {
-  // console.log(dogs[button.id]._id);  
-  // localStorage.setItem('kennelId', kennels[button.id]._id);
-  // window.location = "visualizar-animal.html";
-  // console.log(button)
+  localStorage.setItem('kennelId', kennels[button.id]._id);
+  // window.location = "visualizar-kennel.html";  
 }

@@ -8,7 +8,6 @@ $(document).ready(function () {
 
 function searchDogs(page) {
   empty();
-
   const config = {
     headers: { 'Authorization': "bearer " + localStorage.getItem('token') }
   };
@@ -20,19 +19,23 @@ function searchDogs(page) {
     .then(function (response) {
       var obj = response.data.dogs.docs;
 
+      dogs = [];
+
+      obj.forEach(dog => {
+        dogs.push(dog);
+      });
+
       var tamanho = obj.length;
 
       for (var i = 0; i < tamanho; i++) {
         obj = response.data.dogs.docs[i];
-        dogs.push(obj);
-        console.log(obj);
         $("#data").append(
           "<tr>" +
           "<td>" +
           parseInt(i + 1) +
           "</td>" +
           "<td>" +
-          '<img id="imagem" src="../images/cachorro.jpg" alt="dog-image">' +
+          '<img id="imagem" src="../images/dog-2.png" alt="dog-image">' +
           obj.name +
           "</td>" +
           "<td>" +
@@ -121,5 +124,6 @@ function empty() {
 
 function viewDog(button) {
   localStorage.setItem('dogId', dogs[button.id]._id);
-  window.location = "visualizar-animal.html";
+
+  window.location = "visualizar-animal-canil.html";
 }
