@@ -85,7 +85,7 @@ function paginacao(tamanho, quantidadeRegistros) {
   var array = new Array();
   array = new Array(tamanhoArray);
 
-  if (quantidadeRegistros >= 5) {
+  if (quantidadeRegistros >= 5 && quantidadeRegistros > 0) {
     tamanhoArray++;
     
     for (var i = 1; i <= tamanhoArray; i++) {
