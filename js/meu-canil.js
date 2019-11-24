@@ -100,7 +100,7 @@ function listDogs(kennel) {
       '<tr>' +
       '<td>' + parseInt(i) + '</td>' +
       '<td>' +
-      '<img id="imagem" src="../images/cachorro.jpg" alt="dog-image">' + dog.name +
+      '<img id="imagem" src="../images/dog-2.png" alt="dog-image">' + dog.name +
       ' </td>' +
       '<td> ' + dog.breed + ' </td>' +
       '<td>' + dog.age + '</td>' +
