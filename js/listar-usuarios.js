@@ -129,6 +129,7 @@ function paginacao(tamanho, quantidadeRegistros) {
   }
 }
 
+
 function empty() {
   $("#message").empty();
   $("#lista").empty();
