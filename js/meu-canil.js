@@ -143,7 +143,6 @@ function viewDog(button) {
   // console.log(dogs[button.id - 1]._id);
   localStorage.setItem('dogId', dogs[button.id - 1]._id);
   window.location = "visualizar-animal.html";
-
 }
 
 function editDog(button) {

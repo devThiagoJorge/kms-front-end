@@ -1,6 +1,8 @@
-$("#btnSearch").click(function() {
+$(document).ready(function () { 
+  $('#inputSearch').val(localStorage.getItem('searched'));
+  $('#searched').text(localStorage.getItem('searched'));
   searchUser(1);
-});
+ });
 
 function splitReturnFirstName(firstName) {
   var inputSearch = $("#inputSearch").val();
@@ -38,16 +40,17 @@ function searchUser(page) {
       var obj = response.data.users.docs;
       var tamanho = obj.length;
       if (tamanho == 0) {
-        alert("Usuário não cadastrado");
+        // alert("Usuário não cadastrado");
       } else {
         for (var i = 0; i < tamanho; i++) {
           obj = response.data.users.docs[i];
-          $("#lista").append(
+          $("#data").append(
             "<tr>" +
               "<td>" +
               parseInt(i + 1) +
               "</td>" +
               "<td>" +
+              '<img id="imagem" src="../images/user.jpg" alt="dog-image">' +
               obj.firstName +
               " " +
               obj.lastName +
@@ -56,14 +59,14 @@ function searchUser(page) {
               obj.email +
               "</td>" +
               "<td>" +
-              obj.cellPhone +
+              obj.city +
               "</td>" +
               "<td>" +
               obj.city +
               "</td>" +
-              "<td>" +
-              obj.state +
-              "</td>" +
+              '<td>' +
+              '<button id=' + i + ' onclick="viewDog(this)"> <i class="material-icons m-1" style="cursor: pointer; color: #007bff;">&#xE417;</i> </button>' +
+              '</td>' +
               "</tr>"
           );
         }
@@ -129,9 +132,8 @@ function paginacao(tamanho, quantidadeRegistros) {
   }
 }
 
-
 function empty() {
   $("#message").empty();
-  $("#lista").empty();
+  $("#data").empty();
   $("#paginacao").empty();
 }

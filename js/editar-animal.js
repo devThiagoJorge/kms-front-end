@@ -90,6 +90,6 @@ $('#btnSave').click(function () {
         console.log(error);
       });
   } else {
-    window.location.href = 'meu-canil.html';
+    window.history.back()
   }
 });

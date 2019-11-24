@@ -21,5 +21,6 @@ $(document).ready(function () {
 });
 
 $('#btnVoltar').click(function () {
-  window.location.href = 'meu-canil.html';
+  // window.location.href = 'meu-canil.html';
+  window.history.back();
 })

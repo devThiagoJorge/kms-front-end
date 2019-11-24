@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Listagem de usuários</title>
 
-   
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/menu.css">
@@ -49,43 +48,53 @@
         </div>
     </nav>
 
-    <div class="buttons-filtros">
-        <button class="btn mt-1" id="btnAnimal" style="width: 100%; background-color: #DCDCDC;">Animal</button>
-        <button class="btn mt-1" id="btnKennel" style="width: 100%; background-color: #DCDCDC;">Canil</button>
-        <button class="btn btn-dark mt-1" id="btnUser">Usuários</button>
-    </div>
+    <div class="container mt-4" style="min-width: 75%;">
 
-    <div class="container">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <h2>Listagem de <b>usuários</b></h2>
+        <div class="row" class="col-md-2 mb-4">
+            <!-- row -->
+            <div id="buttons" class="col-md-2 order-md-1 mb-4">
+                <button class="btn mt-1" id="btnAnimal" style="width: 100%; background-color: #DCDCDC;">Animal</button>
+                <button class="btn mt-1" id="btnKennel" style="width: 100%; background-color: #DCDCDC;">Canil</button>
+                <button class="btn btn-dark mt-1" id="btnUser" style="width: 100%;">Usuários</button>
+            </div>
+
+            <div class="col-md-10 order-md-1">
+
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h2>Resultados da busca por <b id="searched">a</b></h2>
+                            </div>
+                        </div>
                     </div>
+
+                    <table class="table table-striped table-hover table-bordered" style="margin-top: 25px;">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>Cidade</th>
+                                <th>Estado</th>
+                                <th>Ação</th>
+                                <th style="display: none;">ID</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="clearfix">
+                    <div class="hint-text" id="message"></div>
+                    <ul id="paginacao" class="pagination">
+                    </ul>
                 </div>
             </div>
-            <table class="table table-striped table-hover table-bordered">
-                <thead>
-
-                    <th>#</th>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Celular</th>
-                    <th>Cidade</th>
-                    <th>Estado</th>
-                </thead>
-                <tbody id="lista">
-
-                </tbody>
-            </table>
-
-        </div>
-        <div class="clearfix">
-            <div class="hint-text" id="message"></div>
-            <ul id="paginacao" class="pagination">
-            </ul>
         </div>
     </div>
+
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -95,6 +104,6 @@
     crossorigin="anonymous"></script>
 <script src="../js/menu.js"></script>
 <script src="../js/buttons-filtros.js"></script>
-<script src="../js/listar-usuarios.js"></script>
+<script src="../js/listagem-usuarios.js"></script>
 
 </html>
