@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Listagem de Canis</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title></title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/menu.css">
@@ -19,15 +18,11 @@
         <a class="navbar-brand" href="index.html">
             <img title="Página inicial" src="../images/icon.png" width="50px" height="50px" alt="home">
         </a>
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
-            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
-        </button> -->
 
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <button id="btnMeuCanil" class="btn btn-dark" style="width: 150px;">Meu canil</button
+                    <button id='btnMeuCanil' class="btn btn-dark" style="width: 150px;">Meu canil</button
                         class="btn btn-dark">
                 </li>
             </ul>
@@ -52,18 +47,20 @@
         </div>
     </nav>
 
+    <div class="buttons-filtros">
+
+    </div>
+
     <div class="container mt-4" style="min-width: 75%;">
 
         <div class="row" class="col-md-2 mb-4">
-
+            <!-- row -->
             <div id="buttons" class="col-md-2 order-md-1 mb-4">
-                <button class="btn mt-1" id="btnAnimal" style="width: 100%; background-color: #DCDCDC">Animal</button>
-                <button class="btn btn-dark mt-1" id="btnKennel" style="width: 100%;">Canil</button>
+                <button class="btn btn-dark mt-1" id="btnAnimal" style="width: 100%;">Animal</button>
+                <button class="btn mt-1" id="btnKennel" style="width: 100%; background-color: #DCDCDC;">Canil</button>
                 <button class="btn mt-1" id="btnUser" style="width: 100%; background-color: #DCDCDC;">Usuários</button>
             </div>
-
             <div class="col-md-10 order-md-1">
-
                 <div class="table-wrapper">
                     <div class="table-title">
                         <div class="row">
@@ -78,9 +75,9 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nome</th>
-                                <th>E-mail</th>
-                                <th>Cidade</th>
-                                <th>Estado</th>
+                                <th>Raça</th>
+                                <th>Idade</th>
+                                <th>Porte</th>
                                 <th>Ação</th>
                                 <th style="display: none;">ID</th>
                             </tr>
@@ -95,21 +92,20 @@
                     <ul id="paginacao" class="pagination">
                     </ul>
                 </div>
-            </div>
-        </div>
-    </div>
 
+            </div>
+
+        </div> <!-- row -->
+
+    </div>
 </body>
-<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script> -->
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
     integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
     crossorigin="anonymous"></script>
-    <script src="../js/listagem-kennel.js"></script>
-    <script src="../js/menu.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../js/listagem-animais.js"></script>
+<script src="../js/menu.js"></script>
 <script src="../js/buttons-filtros.js"></script>
 
 </html>

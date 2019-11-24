@@ -83,6 +83,7 @@ function create() {
         alert('Erro ao criar canil');
       } else {
         alert('Canil criado com sucesso!');
+        localStorage.setItem('hasKennel', 'true');
         window.location.href = 'meu-canil.html'
       }
     })

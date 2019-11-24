@@ -1,5 +1,5 @@
 $("#btnAnimal").click(function () { 
-        window.location  = "index.html";
+        window.location  = "listagem-animais.html";
 })
 
 $("#btnUser").click(function () { 

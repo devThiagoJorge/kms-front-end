@@ -11,3 +11,18 @@ $('#btnMeuCanil').click(function () {
     window.location.href = 'meu-canil-cadastre.html';
   }
 });
+
+$("#btnSearch").click(function () {
+  if ($('#inputSearch').val() != '') {
+    var urlArray = window.location.href.split('/')
+    var length = urlArray.length;
+    var url = urlArray[length - 1];
+
+    localStorage.setItem('searched', $('#inputSearch').val());
+    if (url != 'listagem-animais.html' && url != 'listagem-usuarios.html' && url != 'listagem-kennel.html') {
+      window.location.href = 'listagem-animais.html'
+    } else {
+      window.location.reload();
+    }
+  }
+});
