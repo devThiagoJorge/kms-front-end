@@ -26,9 +26,11 @@ function searchDogs(page) {
       });
 
       var tamanho = obj.length;
-
+     
       for (var i = 0; i < tamanho; i++) {
         obj = response.data.dogs.docs[i];
+
+
         $("#data").append(
           "<tr>" +
           "<td>" +
@@ -42,7 +44,7 @@ function searchDogs(page) {
           obj.breed +
           "</td>" +
           "<td>" +
-          'idade' +
+          obj.birthday +
           "</td>" +
           "<td>" +
           obj.size +

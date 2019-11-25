@@ -80,7 +80,7 @@ function searchUser(page) {
           );
         }
         tamanho = response.data.users.total;
-        console.log(tamanho);
+      
         var quantidadeRegistros = response.data.users.docs.length;
         paginacao(tamanho, quantidadeRegistros);
       }
@@ -91,54 +91,34 @@ function searchUser(page) {
 }
 
 function paginacao(tamanho, quantidadeRegistros) {
-  var tamanhoArray = tamanho / quantidadeRegistros;
-  tamanhoArray = parseInt(tamanhoArray);
+  var paginacao = tamanho / quantidadeRegistros;
+  paginacao = parseInt(paginacao);
+ 
 
-  var array = new Array();
-  array = new Array(tamanhoArray);
-
-  if (quantidadeRegistros >= 5 && quantidadeRegistros > 0) {
-    tamanhoArray++;
-
-    for (var i = 1; i <= tamanhoArray; i++) {
-      array[i] = i;
-      $("#paginacao").append(
-        '<li class="page-item"><button onclick="searchUser(' +
-        array[i] +
+  if (paginacao % 5 != 0){
+    paginacao++;
+  }
+  console.log("Tamanho: " + tamanho + " registros: " + quantidadeRegistros);
+  console.log(tamanho + " / " + quantidadeRegistros + " = " + paginacao );
+  
+  for(var i=1; i <= paginacao ; i++){
+    $("#paginacao").append(
+      '<li class="page-item"><button onclick="searchUser(' +
+        i +
         ');"  class="page-link">' +
-        array[i] +
+        i +
         "</button></li>"
-      );
-    }
-    $("#message").append(
-      "Mostrando <b>" +
-      quantidadeRegistros +
-      "</b> resultados de <b>" +
-      tamanho +
-      "</b>"
-    );
-
-  } else {
-    var number = 1;
-    for (var i = 1; i <= tamanhoArray; i += 5) {
-
-      $("#paginacao").append(
-        '<li class="page-item"><button onclick="searchUser(' +
-        number +
-        ');"  class="page-link">' +
-        number +
-        "</button></li>"
-      );
-      number++;
-    }
-    $("#message").append(
-      "Mostrando <b>" +
-      quantidadeRegistros +
-      "</b> resultados de <b>" +
-      tamanho +
-      "</b>"
     );
   }
+
+
+  $("#message").append(
+    "Mostrando <b>" +
+      quantidadeRegistros  +
+      "</b> resultados de <b>" +
+      tamanho +
+      "</b>"
+  );
 }
 
 function empty() {

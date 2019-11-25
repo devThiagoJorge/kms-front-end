@@ -9,17 +9,9 @@ $(document).ready(function () {
     .then(function (response) {
       const dog = response.data;                  
       var birthday = response.data.birthday;
-      var yearDog ="";
-      for(var i=0; i < 4 ; i++){
-        yearDog += birthday[i];
-      }
-
-      var currentTime = new Date()
-      var currentYear = currentTime.getFullYear()
-
-      var ageDog = parseInt(currentYear) - parseInt(yearDog);
       
-      $("#age").val(ageDog);
+      $("#age").val(ageDog(birthday));
+      
       Object.keys(dog).forEach(function (attr) {
         $('#' + attr).val(dog[attr]);
       });
@@ -39,3 +31,30 @@ $('#btnVoltar').click(function () {
 })
 
 
+function ageDog(birthday){
+  var year = "";
+
+  for(var i=0; i < 4; i++){
+      year += birthday;
+  }
+
+  var currentTime = new Date()
+  var currentYear = currentTime.getFullYear()
+
+  var ageDog = parseInt(currentYear) - parseInt(year);
+
+  if(ageDog == 0){
+      year = "";
+      year += birthday[5];
+      year += birthday[6];
+      
+      currentYear = currentTime.getMonth();
+
+      ageDog = parseInt(currentYear) - parseInt(year);
+
+      return ageDog + " meses";
+  }
+ 
+
+  return ageDog + " anos";
+}

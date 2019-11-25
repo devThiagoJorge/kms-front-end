@@ -35,7 +35,7 @@ function searchDogs(page) {
           obj.breed +
           "</td>" +
           "<td>" +
-          'idade' +
+          ageDog(obj.birthday) +
           "</td>" +
           "<td>" +
           obj.size +
@@ -120,4 +120,32 @@ function viewDog(button) {
   localStorage.setItem('dogId', dogs[button.id]._id);
   window.location = "visualizar-animal.html";
   // console.log(button)
+}
+
+
+function ageDog(birthday){
+  var year = "";
+
+  for(var i=0; i < 4; i++){
+      year += birthday;
+  }
+
+  var currentTime = new Date()
+  var currentYear = currentTime.getFullYear()
+
+  var ageDog = parseInt(currentYear) - parseInt(year);
+
+  if(ageDog == 0){
+      year = "";
+      year += birthday[5];
+      year += birthday[6];
+      
+      currentYear = currentTime.getMonth();
+
+      ageDog = parseInt(currentYear) - parseInt(year);
+
+      return ageDog + " meses";
+  }
+
+  return ageDog + " anos";
 }
