@@ -40,7 +40,7 @@ function searchUser(page) {
     .get("http://localhost:3001/user/search?page=" + page + q)
     .then(function (response) {
       var obj = response.data.users.docs;
-
+     
       users = [];
 
       obj.forEach(user => {
@@ -79,10 +79,13 @@ function searchUser(page) {
             "</tr>"
           );
         }
-        tamanho = response.data.users.total;
-      
+        
+        
+        var pages = response.data.users.pages;
+        var total = response.data.users.total;
         var quantidadeRegistros = response.data.users.docs.length;
-        paginacao(tamanho, quantidadeRegistros);
+
+        paginacao(pages,quantidadeRegistros,total);
       }
     })
     .catch(function (error) {
@@ -90,20 +93,10 @@ function searchUser(page) {
     });
 }
 
-function paginacao(tamanho, quantidadeRegistros) {
-  var paginacao = tamanho / quantidadeRegistros;
 
+function paginacao(pages,quantidadeRegistros,tamanho) {
   var array = new Array();
-  paginacao = parseInt(paginacao);
- 
-  if (paginacao % 5 != 0 && tamanho > 5){
-    paginacao++;
-  }
-
-  array.length = paginacao;
-  console.log(array.length);
- 
-  for(var i=1; i <= paginacao; i++){
+  for(var i=1; i <= pages; i++){
     array [i] = i;
       $("#paginacao").append(
         '<li class="page-item"><button onclick="searchUser(' +
@@ -113,7 +106,6 @@ function paginacao(tamanho, quantidadeRegistros) {
           "</button></li>"
       );
   }
-
   $("#message").append(
     "Mostrando <b>" +
       quantidadeRegistros  +
@@ -121,7 +113,6 @@ function paginacao(tamanho, quantidadeRegistros) {
       tamanho +
       "</b>"
   );
-  
 }
 
 

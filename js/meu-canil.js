@@ -5,7 +5,7 @@ var dogs = [];
 $(document).ready(function () {
   buscaCanil()
     .then(kennel => {
-      calculaIdade(kennel);
+     
       listDogs(kennel);
     })
 });
@@ -103,7 +103,7 @@ function listDogs(kennel) {
       '<img id="imagem" src="../images/dog-2.png" alt="dog-image">' + dog.name +
       ' </td>' +
       '<td> ' + dog.breed + ' </td>' +
-      '<td>' + dog.age + '</td>' +
+      '<td>' + ageDog(dog.birthday) + '</td>' +
       '<td>' + dog.size + '</td>' +
       '<td>' +
       '<button id="' + i + '" onclick="viewDog(this)"> <i class="material-icons m-1" style="cursor: pointer; color: #007bff;">&#xE417;</i> </button>' +
@@ -116,28 +116,6 @@ function listDogs(kennel) {
   });
 }
 
-function calculaIdade(kennel) {
-  kennel.dogs.forEach(dog => {
-    // let date = dog.birthday.split('-');
-    // // console.log(date[0], date[1], date[2]);
-
-    // let dd = date[2].split('T');
-    // let mm = date[1];
-    // let yyyy = date[0];
-
-    // let birthday = dd[0] + '-' + mm + '-' + yyyy
-
-    // console.log(birthday)
-
-    // // var today = new Date();
-    // // dd = today.getDate();
-    // // mm = 1 + today.getMonth();
-    // // yyyy = today.getFullYear();
-    // // today = dd + '-' + mm + '-' + yyyy;        
-
-    // // console.log(today)
-  });
-}
 
 function viewDog(button) {
   // console.log(dogs[button.id - 1]._id);
@@ -182,3 +160,33 @@ function deleteDog(button) {
     }
   }
 }
+
+
+function ageDog(birthday){
+  var year = "";
+
+  for(var i=0; i < 4; i++){
+      year += birthday;
+  }
+
+  var currentTime = new Date()
+  var currentYear = currentTime.getFullYear()
+
+  var ageDog = parseInt(currentYear) - parseInt(year);
+
+  if(ageDog == 0){
+      year = "";
+      year += birthday[5];
+      year += birthday[6];
+      
+      currentYear = currentTime.getMonth();
+
+      ageDog = parseInt(currentYear) - parseInt(year);
+
+      return ageDog + " meses";
+  }
+
+  return ageDog + " anos";
+
+}
+
