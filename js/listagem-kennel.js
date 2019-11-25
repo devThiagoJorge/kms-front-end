@@ -8,8 +8,13 @@ $(document).ready(function() {
 
 function searchKennels(page) {
   empty();
+<<<<<<< HEAD
   const config = {
     headers: { Authorization: "bearer " + localStorage.getItem("token") }
+=======
+  const config = {  
+    headers: { 'Authorization': "bearer " + localStorage.getItem('token') }
+>>>>>>> b679880bae3d31b7635073f3efc1853355c87f94
   };
 
   var q = "&name=" + $("#inputSearch").val();
@@ -25,13 +30,15 @@ function searchKennels(page) {
         kennels.push(kennel);
       });
 
+<<<<<<< HEAD
       console.log(obj);
 
+=======
+>>>>>>> b679880bae3d31b7635073f3efc1853355c87f94
       var tamanho = obj.length;
 
       for (var i = 0; i < tamanho; i++) {
         obj = response.data.kennels.docs[i];
-        console.log(obj);
         $("#data").append(
           "<tr>" +
             "<td>" +
@@ -62,7 +69,7 @@ function searchKennels(page) {
       var pages = response.data.kennels.pages;
       var total = response.data.kennels.total;
       var quantidadeRegistros = response.data.kennels.docs.length;
-
+      
       paginacao(pages, quantidadeRegistros, total);
     })
     .catch(function(error) {
