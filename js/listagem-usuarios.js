@@ -92,25 +92,27 @@ function searchUser(page) {
 
 function paginacao(tamanho, quantidadeRegistros) {
   var paginacao = tamanho / quantidadeRegistros;
+
+  var array = new Array();
   paginacao = parseInt(paginacao);
  
-
-  if (paginacao % 5 != 0){
+  if (paginacao % 5 != 0 && tamanho > 5){
     paginacao++;
   }
-  console.log("Tamanho: " + tamanho + " registros: " + quantidadeRegistros);
-  console.log(tamanho + " / " + quantidadeRegistros + " = " + paginacao );
-  
-  for(var i=1; i <= paginacao ; i++){
-    $("#paginacao").append(
-      '<li class="page-item"><button onclick="searchUser(' +
-        i +
-        ');"  class="page-link">' +
-        i +
-        "</button></li>"
-    );
-  }
 
+  array.length = paginacao;
+  console.log(array.length);
+ 
+  for(var i=1; i <= paginacao; i++){
+    array [i] = i;
+      $("#paginacao").append(
+        '<li class="page-item"><button onclick="searchUser(' +
+           array[i]+
+          ');"  class="page-link">' +
+           array[i]+
+          "</button></li>"
+      );
+  }
 
   $("#message").append(
     "Mostrando <b>" +
@@ -119,7 +121,10 @@ function paginacao(tamanho, quantidadeRegistros) {
       tamanho +
       "</b>"
   );
+  
 }
+
+
 
 function empty() {
   $("#message").empty();
