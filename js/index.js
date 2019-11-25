@@ -16,11 +16,16 @@ function searchDogs(page) {
     .then(function (response) {
       var obj = response.data.dogs.docs;
 
+      dogs = [];
+
+      obj.forEach(dog => {
+        dogs.push(dog);
+      });
+
       var tamanho = obj.length;
 
       for (var i = 0; i < tamanho; i++) {
         obj = response.data.dogs.docs[i];
-        dogs.push(obj);
         console.log(obj);
         $("#data").append(
           "<tr>" +
@@ -116,8 +121,6 @@ function empty() {
 }
 
 function viewDog(button) {
-  // console.log(dogs[button.id]._id);  
   localStorage.setItem('dogId', dogs[button.id]._id);
-  window.location = "visualizar-animal.html";
-  // console.log(button)
+  window.location = "visualizar-animal-canil.html";
 }
