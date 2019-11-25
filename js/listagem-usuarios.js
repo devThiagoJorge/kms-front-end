@@ -80,7 +80,7 @@ function searchUser(page) {
           );
         }
         tamanho = response.data.users.total;
-        console.log(tamanho);
+      
         var quantidadeRegistros = response.data.users.docs.length;
         paginacao(tamanho, quantidadeRegistros);
       }
@@ -91,55 +91,40 @@ function searchUser(page) {
 }
 
 function paginacao(tamanho, quantidadeRegistros) {
-  var tamanhoArray = tamanho / quantidadeRegistros;
-  tamanhoArray = parseInt(tamanhoArray);
+  var paginacao = tamanho / quantidadeRegistros;
 
   var array = new Array();
-  array = new Array(tamanhoArray);
-
-  if (quantidadeRegistros >= 5) {
-    tamanhoArray++;
-
-    for (var i = 1; i <= tamanhoArray; i++) {
-      array[i] = i;
-      $("#paginacao").append(
-        '<li class="page-item"><button onclick="searchUser(' +
-        array[i] +
-        ');"  class="page-link">' +
-        array[i] +
-        "</button></li>"
-      );
-    }
-    $("#message").append(
-      "Mostrando <b>" +
-      quantidadeRegistros +
-      "</b> resultados de <b>" +
-      tamanho +
-      "</b>"
-    );
-
-  } else {
-    var number = 1;
-    for (var i = 1; i <= tamanhoArray; i += 5) {
-
-      $("#paginacao").append(
-        '<li class="page-item"><button onclick="searchUser(' +
-        number +
-        ');"  class="page-link">' +
-        number +
-        "</button></li>"
-      );
-      number++;
-    }
-    $("#message").append(
-      "Mostrando <b>" +
-      quantidadeRegistros +
-      "</b> resultados de <b>" +
-      tamanho +
-      "</b>"
-    );
+  paginacao = parseInt(paginacao);
+ 
+  if (paginacao % 5 != 0 && tamanho > 5){
+    paginacao++;
   }
+
+  array.length = paginacao;
+  console.log(array.length);
+ 
+  for(var i=1; i <= paginacao; i++){
+    array [i] = i;
+      $("#paginacao").append(
+        '<li class="page-item"><button onclick="searchUser(' +
+           array[i]+
+          ');"  class="page-link">' +
+           array[i]+
+          "</button></li>"
+      );
+  }
+
+  $("#message").append(
+    "Mostrando <b>" +
+      quantidadeRegistros  +
+      "</b> resultados de <b>" +
+      tamanho +
+      "</b>"
+  );
+  
 }
+
+
 
 function empty() {
   $("#message").empty();

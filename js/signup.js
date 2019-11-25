@@ -16,9 +16,11 @@ $("#inputCep").keyup(function() {
           var city = response.data.localidade;
           $("#inputState").val(state);
           $("#inputCity").val(city);
+          $("#inputCep").css("border"," 1px solid #ced4da");
         } else {
-          alert("Cep não encontrado");
-          $("#inputCep").val("");
+
+          $("#inputCep").css("border"," 1px solid red");
+         
         }
       })
       .catch(function(error) {
