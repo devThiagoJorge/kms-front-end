@@ -30,9 +30,9 @@
         </li>
       </ul>
       <div class="form-search">
-        <input class="form-control mr-sm-2" style="width: 300px;" type="search"
+        <input id="inputSearch" class="form-control mr-sm-2" style="width: 300px;" type="search"
           placeholder="Busque por raças, canis ou usuários" aria-label="Pesquisar">
-        <button class="btn btn-dark my-2 my-sm-0" type="submit">Pesquisar</button>
+        <button class="btn btn-dark my-2 my-sm-0" id="btnSearch" type="submit">Pesquisar</button>
       </div>
       <div class="drop-down">
         <div class="nav-item dropdown">
@@ -125,76 +125,76 @@
 
           <hr class="mb-4">
 
-            <h4 class="mb-3">Informações do canil</h4>
+          <h4 class="mb-3">Informações do canil</h4>
 
-            <article id="form">
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="name">Nome</label>
-                  <input id="name" type="text" class="form-control" readonly>
-                </div>
-
-                <div class="col-md-6 mb-3">
-                  <label for="email">E-mail para contato</label>
-                  <input id="email" type="text" class="form-control" readonly>
-                </div>
+          <article id="form">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="kennelName">Nome</label>
+                <input id="kennelName" type="text" class="form-control" readonly>
               </div>
 
-              <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="kennelEmail">E-mail para contato</label>
+                <input id="kennelEmail" type="text" class="form-control" readonly>
+              </div>
+            </div>
 
-                <div class="col-md-4 mb-3">
-                  <label for="cep">CEP</label>
-                  <input id="cep" type="text" class="form-control" readonly>
-                </div>
+            <div class="row">
 
-                <div class="col-md-4 mb-3">
-                  <label for="estado">Estado</label>
-                  <input id="estado" type="text" class="form-control" readonly>
-                </div>
-
-                <div class="col-md-4 mb-3">
-                  <label for="cidade">Cidade</label>
-                  <input id="cidade" type="text" class="form-control" readonly>
-                </div>
-
+              <div class="col-md-4 mb-3">
+                <label for="kennelCep">CEP</label>
+                <input id="kennelCep" type="text" class="form-control" readonly>
               </div>
 
-              <div class="row">
-
-                <div class="col-md-4 mb-3">
-                  <label for="bairro">Bairro</label>
-                  <input id="bairro" type="text" class="form-control" readonly>
-                </div>
-
-                <div class="col-md-4 mb-3">
-                  <label for="rua">Rua</label>
-                  <input id="rua" type="text" class="form-control" readonly>
-                </div>
-
-                <div class="col-md-4 mb-3">
-                  <label for="numero">Número</label>
-                  <input id="numero" type="text" class="form-control" readonly>
-                </div>
-
+              <div class="col-md-4 mb-3">
+                <label for="kennelEstado">Estado</label>
+                <input id="kennelEstado" type="text" class="form-control" readonly>
               </div>
 
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="cellPhone">Celular</label>
-                  <input id="cellPhone" type="text" class="form-control" readonly>
-                </div>
-
-                <div class="col-md-6 mb-3">
-                  <label for="homePhone">Telefone</label>
-                  <input id="homePhone" type="text" class="form-control" readonly>
-                </div>
+              <div class="col-md-4 mb-3">
+                <label for="kennelCidade">Cidade</label>
+                <input id="kennelCidade" type="text" class="form-control" readonly>
               </div>
 
-              
-              <hr class="mb-4">
+            </div>
+
+            <div class="row">
+
+              <div class="col-md-4 mb-3">
+                <label for="kennelBairro">Bairro</label>
+                <input id="kennelBairro" type="text" class="form-control" readonly>
+              </div>
+
+              <div class="col-md-4 mb-3">
+                <label for="kennelRua">Rua</label>
+                <input id="kennelRua" type="text" class="form-control" readonly>
+              </div>
+
+              <div class="col-md-4 mb-3">
+                <label for="kennelNumero">Número</label>
+                <input id="kennelNumero" type="text" class="form-control" readonly>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="kennelCellPhone">Celular</label>
+                <input id="kennelCellPhone" type="text" class="form-control" readonly>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="kennelHomePhone">Telefone</label>
+                <input id="kennelHomePhone" type="text" class="form-control" readonly>
+              </div>
+            </div>
 
 
-            </article>
+            <hr class="mb-4">
+
+
+          </article>
 
 
           <div id="buttons">
