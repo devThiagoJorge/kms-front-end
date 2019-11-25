@@ -169,7 +169,6 @@ function deleteDog(button) {
           if (response.data.error != undefined) {
             alert('Erro ao excluir animal.');
           } else {
-            localStorage.setItem('hasKennel', false);
             alert('Animal excluído!');
             window.location.href = 'meu-canil.html';
           }

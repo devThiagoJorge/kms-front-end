@@ -54,49 +54,56 @@
         <div class="row" class="col-md-2 mb-4">
             <!-- row -->
             <!-- <div id="buttons" class="col-md-1 order-md-1 mb-4"> -->
-                <!-- <button class="btn btn-dark mt-1" id="btnAnimal" style="width: 100%;">Animal</button>
+            <!-- <button class="btn btn-dark mt-1" id="btnAnimal" style="width: 100%;">Animal</button>
                 <button class="btn mt-1" id="btnKennel" style="width: 100%; background-color: #DCDCDC;">Canil</button>
                 <button class="btn mt-1" id="btnUser" style="width: 100%; background-color: #DCDCDC;">Usuários</button> -->
-            </div>
-            <div class="col-md-12 order-md-1">
-                <div class="table-wrapper">
-                    <div class="table-title">
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <h2>Listagem de <b>animais</b></h2>
-                            </div>
+        </div>
+        <div class="col-md-12 order-md-1">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h2>Listagem de <b>animais</b></h2>
                         </div>
                     </div>
-
-                    <table class="table table-striped table-hover table-bordered" style="margin-top: 25px;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nome</th>
-                                <th>Raça</th>
-                                <th>Idade</th>
-                                <th>Porte</th>
-                                <th>Ação</th>
-                                <th style="display: none;">ID</th>
-                            </tr>
-                        </thead>
-                        <tbody id="data">
-                        </tbody>
-                    </table>
                 </div>
 
-                <div class="clearfix">
-                    <div class="hint-text" id="message"></div>
-                    <ul id="paginacao" class="pagination">
-                    </ul>
-                </div>
-
+                <table class="table table-striped table-hover table-bordered" style="margin-top: 25px;">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Raça</th>
+                            <th>Idade</th>
+                            <th>Porte</th>
+                            <th>Ação</th>
+                            <th style="display: none;">ID</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data">
+                    </tbody>
+                </table>
             </div>
 
-        </div> <!-- row -->
+            <div class="clearfix">
+                <div class="hint-text" id="message"></div>
+                <ul id="paginacao" class="pagination">
+                </ul>
+            </div>
 
+        </div>
+
+    </div> <!-- row -->
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2019 KMS Team</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
     </div>
-    
+
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"

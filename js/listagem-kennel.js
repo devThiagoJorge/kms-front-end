@@ -8,7 +8,7 @@ $(document).ready(function () {
 
 function searchKennels(page) {
   empty();
-  const config = {
+  const config = {  
     headers: { 'Authorization': "bearer " + localStorage.getItem('token') }
   };
 
@@ -25,13 +25,10 @@ function searchKennels(page) {
         kennels.push(kennel);
       });
 
-      console.log(obj)
-
       var tamanho = obj.length;
 
       for (var i = 0; i < tamanho; i++) {
         obj = response.data.kennels.docs[i];
-        console.log(obj);
         $("#data").append(
           "<tr>" +
           "<td>" +
@@ -58,7 +55,6 @@ function searchKennels(page) {
       }
 
       tamanho = response.data.kennels.total;
-      console.log(tamanho);
       var quantidadeRegistros = response.data.kennels.docs.length;
       paginacao(tamanho, quantidadeRegistros);
 
