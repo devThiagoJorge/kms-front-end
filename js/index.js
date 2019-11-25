@@ -123,6 +123,7 @@ function empty() {
 function viewDog(button) {
   localStorage.setItem('dogId', dogs[button.id]._id);
  
+  localStorage.setItem('kennelId', dogs[button.id].kennel);
   window.location = "visualizar-animal-canil.html";
   // console.log(button)
 }

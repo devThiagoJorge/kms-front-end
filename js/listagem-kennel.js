@@ -127,5 +127,5 @@ function empty() {
 
 function viewDog(button) {
   localStorage.setItem('kennelId', kennels[button.id]._id);
-  // window.location = "visualizar-kennel.html";  
+  window.location = "visualizar-canil.html";  
 }

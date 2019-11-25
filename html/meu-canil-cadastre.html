@@ -30,14 +30,14 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <!-- <a id="meu-canil" class="nav-link" href="meu-canil.html"> -->
-            <button id='btnMeuCanil' class="btn btn-dark" style="width: 150px;">Meu canil</button class="btn btn-dark">
+          <button id='btnMeuCanil' class="btn btn-dark" style="width: 150px;">Meu canil</button class="btn btn-dark">
           <!-- </a> -->
         </li>
       </ul>
       <div class="form-search">
-        <input class="form-control mr-sm-2" style="width: 300px;" type="search"
+        <input id="inputSearch" class="form-control mr-sm-2" style="width: 300px;" type="search"
           placeholder="Busque por raças, canis ou usuários" aria-label="Pesquisar">
-        <button class="btn btn-dark my-2 my-sm-0" type="submit">Pesquisar</button>
+        <button class="btn btn-dark my-2 my-sm-0" id="btnSearch" type="submit">Pesquisar</button>
       </div>
       <div class="drop-down">
         <div class="nav-item dropdown">
@@ -71,7 +71,7 @@
         <h4 class="mb-3">Meu canil</h4>
         <hr>
         <p>Você não administra nenhum canil, crie um agora mesmo!</p>
-        <div id="buttons">          
+        <div id="buttons">
           <a href="cadastro-canil.html">
             <button class="btn btn-success" id="btnSave" type="submit" style="margin-top: 25px;">Criar canil</button>
           </a>
