@@ -52,10 +52,11 @@ function searchDogs(page) {
         );
       }
 
-      tamanho = response.data.dogs.total;
-      console.log(tamanho);
+      var pages = response.data.dogs.pages;
+      var total = response.data.dogs.total;
       var quantidadeRegistros = response.data.dogs.docs.length;
-      paginacao(tamanho, quantidadeRegistros);
+
+      paginacao(pages,quantidadeRegistros,total);
 
     })
     .catch(function (error) {
@@ -63,55 +64,27 @@ function searchDogs(page) {
     });
 }
 
-function paginacao(tamanho, quantidadeRegistros) {
-  var tamanhoArray = tamanho / quantidadeRegistros;
-  tamanhoArray = parseInt(tamanhoArray);
-
+function paginacao(pages, quantidadeRegistros, tamanho) {
   var array = new Array();
-  array = new Array(tamanhoArray);
 
-  if (quantidadeRegistros >= 5) {
-    tamanhoArray++;
-
-    for (var i = 1; i <= tamanhoArray; i++) {
-      array[i] = i;
-      $("#paginacao").append(
-        '<li class="page-item"><button onclick="searchDogs(' +
+  for (var i = 1; i <= pages; i++) {
+    array[i] = i;
+    $("#paginacao").append(
+      '<li class="page-item"><button onclick="searchDogs(' +
         array[i] +
         ');"  class="page-link">' +
         array[i] +
         "</button></li>"
-      );
-    }
-    $("#message").append(
-      "Mostrando <b>" +
-      quantidadeRegistros +
-      "</b> resultados de <b>" +
-      tamanho +
-      "</b>"
-    );
-
-  } else {
-    var number = 1;
-    for (var i = 1; i <= tamanhoArray; i += 5) {
-
-      $("#paginacao").append(
-        '<li class="page-item"><button onclick="searchDogs(' +
-        number +
-        ');"  class="page-link">' +
-        number +
-        "</button></li>"
-      );
-      number++;
-    }
-    $("#message").append(
-      "Mostrando <b>" +
-      quantidadeRegistros +
-      "</b> resultados de <b>" +
-      tamanho +
-      "</b>"
     );
   }
+
+  $("#message").append(
+    "Mostrando <b>" +
+      quantidadeRegistros +
+      "</b> resultados de <b>" +
+      tamanho +
+      "</b>"
+  );
 }
 
 function empty() {

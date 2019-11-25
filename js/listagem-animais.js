@@ -44,7 +44,7 @@ function searchDogs(page) {
           obj.breed +
           "</td>" +
           "<td>" +
-          obj.birthday +
+          ageDog(obj.birthday) +
           "</td>" +
           "<td>" +
           obj.size +
@@ -56,10 +56,13 @@ function searchDogs(page) {
         );
       }
 
-      tamanho = response.data.dogs.total;
-      console.log(tamanho);
+      
+
+      var pages = response.data.dogs.pages;
+      var total = response.data.dogs.total;
       var quantidadeRegistros = response.data.dogs.docs.length;
-      paginacao(tamanho, quantidadeRegistros);
+
+      paginacao(pages,quantidadeRegistros,total);
 
     })
     .catch(function (error) {
@@ -67,55 +70,25 @@ function searchDogs(page) {
     });
 }
 
-function paginacao(tamanho, quantidadeRegistros) {
-  var tamanhoArray = tamanho / quantidadeRegistros;
-  tamanhoArray = parseInt(tamanhoArray);
-
+function paginacao(pages,quantidadeRegistros,tamanho) {
   var array = new Array();
-  array = new Array(tamanhoArray);
-
-  if (quantidadeRegistros >= 5) {
-    tamanhoArray++;
-
-    for (var i = 1; i <= tamanhoArray; i++) {
-      array[i] = i;
+  for(var i=1; i <= pages; i++){
+    array [i] = i;
       $("#paginacao").append(
         '<li class="page-item"><button onclick="searchDogs(' +
-        array[i] +
-        ');"  class="page-link">' +
-        array[i] +
-        "</button></li>"
+           array[i]+
+          ');"  class="page-link">' +
+           array[i]+
+          "</button></li>"
       );
-    }
-    $("#message").append(
-      "Mostrando <b>" +
-      quantidadeRegistros +
-      "</b> resultados de <b>" +
-      tamanho +
-      "</b>"
-    );
-
-  } else {
-    var number = 1;
-    for (var i = 1; i <= tamanhoArray; i += 5) {
-
-      $("#paginacao").append(
-        '<li class="page-item"><button onclick="searchDogs(' +
-        number +
-        ');"  class="page-link">' +
-        number +
-        "</button></li>"
-      );
-      number++;
-    }
-    $("#message").append(
-      "Mostrando <b>" +
-      quantidadeRegistros +
-      "</b> resultados de <b>" +
-      tamanho +
-      "</b>"
-    );
   }
+  $("#message").append(
+    "Mostrando <b>" +
+      quantidadeRegistros  +
+      "</b> resultados de <b>" +
+      tamanho +
+      "</b>"
+  );
 }
 
 function empty() {
@@ -128,4 +101,33 @@ function viewDog(button) {
   localStorage.setItem('dogId', dogs[button.id]._id);
   localStorage.setItem('kennelId', dogs[button.id].kennel);
   window.location.href = "visualizar-animal-canil.html";
+}
+
+
+function ageDog(birthday){
+  var year = "";
+
+  for(var i=0; i < 4; i++){
+      year += birthday;
+  }
+
+  var currentTime = new Date()
+  var currentYear = currentTime.getFullYear()
+
+  var ageDog = parseInt(currentYear) - parseInt(year);
+
+  if(ageDog == 0){
+      year = "";
+      year += birthday[5];
+      year += birthday[6];
+      
+      currentYear = currentTime.getMonth();
+
+      ageDog = parseInt(currentYear) - parseInt(year);
+
+      return ageDog + " meses";
+  }
+
+  return ageDog + " anos";
+
 }

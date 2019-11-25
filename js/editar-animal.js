@@ -1,6 +1,6 @@
 $(document).ready(function () {
   const dogId = localStorage.getItem('dogId');
-
+ 
   const config = {
     headers: { 'Authorization': "bearer " + localStorage.getItem('token') }
   };
@@ -9,8 +9,12 @@ $(document).ready(function () {
     .then(function (response) {
       const dog = response.data;
 
+      var birthday = localStorage.getItem('birthday');
+      $("#age").val(ageDog(birthday));
+    
       Object.keys(dog).forEach(function (attr) {
         $('#' + attr).val(dog[attr]);
+     
       });
 
       switch (dog.size) {
@@ -31,6 +35,7 @@ $(document).ready(function () {
         }
       });
 
+     
       return dog;
     })
     .catch(function (error) {
@@ -92,4 +97,44 @@ $('#btnSave').click(function () {
   } else {
     window.history.back()
   }
+});
+
+
+
+function ageDog(birthday){
+  var year = "";
+
+  for(var i=0; i < 4; i++){
+      year += birthday;
+  }
+
+  var currentTime = new Date()
+  var currentYear = currentTime.getFullYear()
+
+  var ageDog = parseInt(currentYear) - parseInt(year);
+
+  if(ageDog == 0){
+      year = "";
+      year += birthday[5];
+      year += birthday[6];
+      
+      currentYear = currentTime.getMonth();
+
+      ageDog = parseInt(currentYear) - parseInt(year);
+
+      return ageDog + " meses";
+  }
+
+  return ageDog + " anos";
+
+}
+
+
+$("#birthday").change(function (e) { 
+  e.preventDefault();
+  
+ 
+  var birthday = $("#birthday").val();
+    $("#age").val(ageDog(birthday));
+
 });
