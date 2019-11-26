@@ -28,13 +28,13 @@ function searchDogs(page) {
       var tamanho = obj.length;
      
       for (var i = 0; i < tamanho; i++) {
+        var index = parseInt(i + 1);
+        index = index + 5 * (page - 1);
         obj = response.data.dogs.docs[i];
-
-
         $("#data").append(
           "<tr>" +
           "<td>" +
-          parseInt(i + 1) +
+          index +
           "</td>" +
           "<td>" +
           '<img id="imagem" src="../images/dog-2.png" alt="dog-image">' +

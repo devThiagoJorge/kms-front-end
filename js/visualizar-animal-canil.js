@@ -39,6 +39,10 @@ $(document).ready(function () {
         $('#kennelCellPhone').val(kennel.cellPhone);
         $('#kennelHomePhone').val(kennel.homePhone);
 
+        $("#kennelCellPhone").mask("(00)00000-0000");
+        $("#kennelHomePhone").mask("(00)0000-0000");
+        $("#kennelCep").mask("00000-000");
+
   
         return kennel;
       })

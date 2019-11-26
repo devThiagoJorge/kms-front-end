@@ -96,7 +96,7 @@ function atualizaUser() {
 }
 
 $('#btnCancel').click(function(){
-  window.location.href = "index.html";
+  window.history.back();
 });
 
 $('#form input').each(function () {

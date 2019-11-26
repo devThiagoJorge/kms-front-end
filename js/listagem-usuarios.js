@@ -40,7 +40,7 @@ function searchUser(page) {
     .get("http://localhost:3001/user/search?page=" + page + q)
     .then(function (response) {
       var obj = response.data.users.docs;
-     
+
       users = [];
 
       obj.forEach(user => {
@@ -48,45 +48,47 @@ function searchUser(page) {
       });
 
       var tamanho = obj.length;
-      if (tamanho == 0) {
-        // alert("Usuário não cadastrado");
-      } else {
-        for (var i = 0; i < tamanho; i++) {
-          obj = response.data.users.docs[i];
-          $("#data").append(
-            "<tr>" +
-            "<td>" +
-            parseInt(i + 1) +
-            "</td>" +
-            "<td>" +
-            '<img id="imagem" src="../images/user.jpg" alt="dog-image">' +
-            obj.firstName +
-            " " +
-            obj.lastName +
-            "</td>" +
-            "<td>" +
-            obj.email +
-            "</td>" +
-            "<td>" +
-            obj.city +
-            "</td>" +
-            "<td>" +
-            obj.city +
-            "</td>" +
-            '<td>' +
-            '<button id=' + i + ' onclick="viewUser(this)"> <i class="material-icons m-1" style="cursor: pointer; color: #007bff;">&#xE417;</i> </button>' +
-            '</td>' +
-            "</tr>"
-          );
-        }
-        
-        
-        var pages = response.data.users.pages;
-        var total = response.data.users.total;
-        var quantidadeRegistros = response.data.users.docs.length;
 
-        paginacao(pages,quantidadeRegistros,total);
+      // alert("Usuário não cadastrado");
+
+      for (var i = 0; i < tamanho; i++) {
+        var index = parseInt(i + 1);
+        index = index + 5 * (page - 1);
+        obj = response.data.users.docs[i];
+        $("#data").append(
+          "<tr>" +
+          "<td>" +
+          index +
+          "</td>" +
+          "<td>" +
+          '<img id="imagem" src="../images/user.jpg" alt="dog-image">' +
+          obj.firstName +
+          " " +
+          obj.lastName +
+          "</td>" +
+          "<td>" +
+          obj.email +
+          "</td>" +
+          "<td>" +
+          obj.city +
+          "</td>" +
+          "<td>" +
+          obj.city +
+          "</td>" +
+          '<td>' +
+          '<button id=' + i + ' onclick="viewUser(this)"> <i class="material-icons m-1" style="cursor: pointer; color: #007bff;">&#xE417;</i> </button>' +
+          '</td>' +
+          "</tr>"
+        );
       }
+
+
+      var pages = response.data.users.pages;
+      var total = response.data.users.total;
+      var quantidadeRegistros = response.data.users.docs.length;
+
+      paginacao(pages, quantidadeRegistros, total);
+
     })
     .catch(function (error) {
       console.log(error);
@@ -94,28 +96,26 @@ function searchUser(page) {
 }
 
 
-function paginacao(pages,quantidadeRegistros,tamanho) {
+function paginacao(pages, quantidadeRegistros, tamanho) {
   var array = new Array();
-  for(var i=1; i <= pages; i++){
-    array [i] = i;
-      $("#paginacao").append(
-        '<li class="page-item"><button onclick="searchUser(' +
-           array[i]+
-          ');"  class="page-link">' +
-           array[i]+
-          "</button></li>"
-      );
+  for (var i = 1; i <= pages; i++) {
+    array[i] = i;
+    $("#paginacao").append(
+      '<li class="page-item"><button onclick="searchUser(' +
+      array[i] +
+      ');"  class="page-link">' +
+      array[i] +
+      "</button></li>"
+    );
   }
   $("#message").append(
     "Mostrando <b>" +
-      quantidadeRegistros  +
-      "</b> resultados de <b>" +
-      tamanho +
-      "</b>"
+    quantidadeRegistros +
+    "</b> resultados de <b>" +
+    tamanho +
+    "</b>"
   );
 }
-
-
 
 function empty() {
   $("#message").empty();
@@ -125,5 +125,5 @@ function empty() {
 
 function viewUser(button) {
   localStorage.setItem('userId', users[button.id]._id);
-  window.location = "visualizar-perfil.html";  
+  window.location = "visualizar-perfil.html";
 }
