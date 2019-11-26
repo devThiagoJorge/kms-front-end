@@ -54,5 +54,5 @@ function atualizaSenha() {
 }
 
 $('#btnCancel').click(function () {
-  window.location.href = "index.html"
+  window.history.back();
 });
