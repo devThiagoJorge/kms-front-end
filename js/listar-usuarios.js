@@ -1,4 +1,4 @@
-$("#btnSearch").click(function() {
+$("#btnSearch").click(function () {
   searchUser(1);
 });
 
@@ -34,7 +34,7 @@ function searchUser(page) {
 
   axios
     .get("http://localhost:3001/user/search?page=" + page + q)
-    .then(function(response) {
+    .then(function (response) {
       var obj = response.data.users.docs;
       var tamanho = obj.length;
       if (tamanho == 0) {
@@ -44,28 +44,29 @@ function searchUser(page) {
           obj = response.data.users.docs[i];
           $("#lista").append(
             "<tr>" +
-              "<td>" +
-              parseInt(i + 1) +
-              "</td>" +
-              "<td>" +
-              obj.firstName +
-              " " +
-              obj.lastName +
-              "</td>" +
-              "<td>" +
-              obj.email +
-              "</td>" +
-              "<td>" +
-              obj.cellPhone +
-              "</td>" +
-              "<td>" +
-              obj.city +
-              "</td>" +
-              "<td>" +
-              obj.state +
-              "</td>" +
-              "</tr>"
+            "<td>" +
+            parseInt(i + 1) +
+            "</td>" +
+            "<td>" +
+            obj.firstName +
+            " " +
+            obj.lastName +
+            "</td>" +
+            "<td>" +
+            obj.email +
+            "</td>" +
+            "<td>" +
+            obj.cellPhone +
+            "</td>" +
+            "<td>" +
+            obj.city +
+            "</td>" +
+            "<td>" +
+            obj.state +
+            "</td>" +
+            "</tr>"
           );
+
         }
         tamanho = response.data.users.total;
         console.log(tamanho);
@@ -73,11 +74,11 @@ function searchUser(page) {
         paginacao(tamanho, quantidadeRegistros);
 
         console.log(tamanhoArray);
-    console.log(tamanho)
-    console.log(quantidadeRegistros)
+        console.log(tamanho)
+        console.log(quantidadeRegistros)
       }
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.log(error);
     });
 }
@@ -86,33 +87,33 @@ function paginacao(tamanho, quantidadeRegistros) {
   var tamanhoArray = tamanho / quantidadeRegistros;
   tamanhoArray = parseInt(tamanhoArray);
   var number = 1;
-  if(tamanhoArray % 5 == 0){
+  if (tamanhoArray % 5 == 0) {
     number++;
-    
-    criaPaginação(tamanhoArray-1,number, quantidadeRegistros,tamanho);
+
+    criaPaginação(tamanhoArray - 1, number, quantidadeRegistros, tamanho);
   }
- 
-  
+
+
 }
 
-function criaPaginação(tamanhoArray,number,quantidadeRegistros,tamanho){
-  for (var i = 1; i <= tamanhoArray; i+=5) {
-    
+function criaPaginação(tamanhoArray, number, quantidadeRegistros, tamanho) {
+  for (var i = 1; i <= tamanhoArray; i += 5) {
+
     $("#paginacao").append(
       '<li class="page-item"><button onclick="searchUser(' +
-        number +
-        ');"  class="page-link">' +
-       number+
-        "</button></li>"       
+      number +
+      ');"  class="page-link">' +
+      number +
+      "</button></li>"
     );
     number++;
   }
   $("#message").append(
     "Mostrando <b>" +
-      quantidadeRegistros +
-      "</b> resultados de <b>" +
-      tamanho +
-      "</b>"
+    quantidadeRegistros +
+    "</b> resultados de <b>" +
+    tamanho +
+    "</b>"
   );
 
 }

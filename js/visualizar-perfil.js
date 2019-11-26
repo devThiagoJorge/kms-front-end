@@ -8,7 +8,7 @@ $(document).ready(function () {
   axios.get('http://localhost:3001/user/' + userId, config)
     .then(function (response) {
       const user = response.data;                  
-
+      $("#cellPhone").val(response.data.cellphone)
       console.log(user)
 
       Object.keys(user).forEach(function (attr) {

@@ -71,7 +71,7 @@ function searchUser(page) {
             obj.city +
             "</td>" +
             "<td>" +
-            obj.city +
+            obj.state +
             "</td>" +
             '<td>' +
             '<button id=' + i + ' onclick="viewUser(this)"> <i class="material-icons m-1" style="cursor: pointer; color: #007bff;">&#xE417;</i> </button>' +
